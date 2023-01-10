@@ -85,4 +85,4 @@ SECRET_KEY = 'h5qahzqsl#mi1=ahzqq!9-qhkf8d$m7go8lol*+uw2$9s&=_tw'
 
 INSTALLED_APPS = ['otree','otreeutils']
 
-OTREE_AUTH_LEVEL = 'DEMO'
+OTREE_AUTH_LEVEL = 'DEBUG'
