@@ -1,0 +1,43 @@
+{{ block title }}
+Welcome
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+
+<p>The experiment takes place over two days, defined as <i> Day 1 ({{today}})</i> and <i> Day 2 ({{tomorrow}})</i>.
+</p>
+
+<p>Today is <b>Day {{day}}</b>.</p>
+ 
+<p>In each day, you take part in 3 parts: <i>Part 1</i>, <i>Part 2</i>, and <i>Part 3</i>.</p>
+
+
+<center><img src="{{ static 'days.png' }}" width=400/></center>
+
+<p>You will now receive detailed instructions for Part 1.</p>
+<p>Instructions for the other parts will follow.
+{{if day == 2}}
+<i>Please notice that the instructions you receive today are the same you received yesterday.</i></p>
+<p>Before starting, you will be notified whether yesterday you were hired or not by the Player A you were associated with.</p>
+{{ endif }}
+</div>
+<br><br>
+
+<!--------------------------------------------------------------------->
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="text-align: center">
+    <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'I read the instructions' }}</button>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<!--------------------------------------------------------------------->
+{{ endblock }}
+
+{{ block styles }}
+<!-- <link href="{{ static "beliefs/mystyle.css" }}" rel="stylesheet"> -->
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+

@@ -1,0 +1,60 @@
+{{ block title }}
+
+<h1>Welcome</h1>
+
+{{ endblock }}
+
+{{ block content }}
+
+<!-- ROUND 1 AGENT-->
+
+<div class="container box">
+<p>You will now be paired with two other participants who took part in a previous session. We identify these participants as <b>Candidates</b> and explain here what they did in their session.</p>
+<p>In the next screen, we explain to you what your task is today.</p>
+
+<h2>Candidates' Task</h2>
+
+<p>The candidates took part in an earlier session and were asked to solve a series of problems. The problems all have the same structure.
+</p>
+<p>
+The following is an example of the problem: one needs to "convert" the numbers reported in the lower panel into letters
+according to the conversion table in the upper panel.
+    </p>
+<p>
+<center><img src="{{ static "demo_task.png" }}" width=400/></center>
+</p>
+<p>In this example, the solution to this problem is: <i>MDQEP</i></p>
+<p>
+The candidates had {{time}} seconds to solve as many problems as they could.
+They earned {{piece_rate}} for every problem they solved correctly.
+</p>
+
+<h2>Candidates' Beliefs</h2>
+
+<p>Each candidate was matched with another candidate and was asked to estimate the
+    probability that he/she performed better than the other in the task. </p>
+
+<p>The closer the probability that they reported to the actual outcome of the comparison, the higher the likelihood of
+    earning {{C.EARN_BEL}}. We conceived a system of incentives that encouraged a truthful report of beliefs.</p>
+</div>
+
+
+<br><br>
+
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
+        <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'CONTINUE' }}</button>
+    </div>
+    <div class="col-md-5"></div>
+</div>
+
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

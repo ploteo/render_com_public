@@ -1,0 +1,21 @@
+{{ block title }}
+    Results
+{{ endblock }}
+{{ block content }}
+<div class="container box">
+<p>You hired Candidate {{hire}}</p>
+<p>In Stage 2 the Candidate solved <i>{{performance}}</i> tasks</p>
+<p>Thus, you earn <i>{{payoff}}</i></p>
+</div>
+<br>
+<div class="d-flex flex-column align-items-center">
+    <button id="submit-btn" class="btn btn-outline-secondary">OK</button>
+</div>
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

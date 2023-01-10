@@ -1,0 +1,79 @@
+
+.box {
+	border-style: solid;
+	border-color: #000d86;
+	padding: 30px 30px 30px 30px;
+}
+
+.boxsmall {
+	border-style: solid;
+	border-color: #000d86;
+	padding: 30px 30px 30px 30px;
+	width: 600px;
+	margin: auto;
+}
+
+.table {
+	width: 100%;
+	border: 2px solid;
+	text-align: center;
+	border-color: #000d86;
+}
+
+
+h1 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 24pt;
+	font-weight: bold;
+	color: #000d86;
+	text-align: center;
+	width: 100%;
+	margin: 0px 0 10px 0;
+}
+
+h2 {
+	font-size: 18pt;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: bold;
+	color: #000d86;
+	text-align: left;
+	width: 100%;
+	margin: 40px 0 10px 0;
+}
+
+h3 {
+	font-size: 14pt;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: bold;
+	color: #000d86;
+	text-align: left;
+	width: 100%;
+	margin: 40px 0 10px 0;
+}
+
+p {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 120%;
+	line-height: 1.5em;
+}
+
+li {font-family: 'Roboto Condensed', sans-serif;
+	font-size: 12pt;
+}
+
+input[type=radio] {
+	transform: scale(1.2);
+	margin: 12px -10px 0px -30px;
+}
+
+.next {
+    float: right;
+    margin: 40px auto;
+    }
+
+ .back{
+    float: left;
+    margin: 40px auto;
+    }
+
+

@@ -1,0 +1,41 @@
+{{ block title }}
+Results from Day 1
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+  <div class="row">
+    <div class="col-sm">
+    <p>In Day 1, you solved <b>{{performance}}</b> tasks correctly in Part 1.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+{{if player.hired == "yes" }} 
+<p>In Day 1, you were <b>hired</b> &#128512;</p>
+{{ else }}
+<p>You were <b>not hired</b> &#128577;</p>
+{{endif}}
+</div>
+</div>
+</div>
+<br>
+
+<!--------------------------------------------------------------------->
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="text-align: center">
+    <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'CLICK HERE TO START' }}</button>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<!--------------------------------------------------------------------->
+
+{{ endblock }}
+
+{{ block styles }}
+<!-- <link href="{{ static "beliefs/mystyle.css" }}" rel="stylesheet"> -->
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+

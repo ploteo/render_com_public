@@ -1,0 +1,47 @@
+{{ block title }}
+Results
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+<p>
+    You have tried {{ player.num_trials }} puzzles, successfully solved {{ player.num_correct }},
+    and failed {{ player.num_failed }}.
+</p>
+{{ if player.round_number == 1 }}
+<p> Thus you earn {{ player.payoff }} in this part.</p>
+{{ endif }}
+
+{{ if player.round_number == 2}}
+
+<p> You will know tomorrow if you were hired and the associated earnings in this Part.</p>
+
+{{ if day == 1 }}
+
+<p> Please do not forget to log in tomorrow when notified. </p>
+<div class="alert alert-warning" role="alert">
+If you do not log in tomorrow, you will not be eligible for payment!
+</div>
+
+{{ endif}}
+
+{{ endif }}
+
+</div>
+<br>
+<div class="d-flex flex-column align-items-center">
+<button id="submit-btn" class="btn btn-outline-primary">OK</button>
+</div>
+
+{{ if player.round_number == 2}}
+
+
+{{ endif }}
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

@@ -1,0 +1,77 @@
+{{ block title }}
+    Your Task
+{{ endblock }}
+
+
+{{ block content }}
+
+<div class="container box">
+
+<p>You will see the number of taks correctly solved by two Candidates in the decoding task described in the previous page.</p>
+<p>You will also see the beliefs of the candidates about their likelihood of being better than a random other candidate.</p>
+
+<p>Below you see an example of the screen you will see in the next screen.</p>
+    <div class="row">
+    <div class="col-sm">
+<div class="card">
+    <div class="card-header" style="font-size:16px">
+        <h3>Candidate X</h3>
+    </div>
+    <div class="card-body" style="font-size:10px">
+        <blockquote class="blockquote mb-0">
+            <p >The candidate solved <b>5</b> tasks correctly.</p>
+              <p>The candidate estimated to be better than a random other participant with probability
+                  <b>80%</b></p>
+        </blockquote><br>
+         <center><button type="button" id="btn_submit" value="X" name="hire"
+                 class="btn btn-outline-primary btn-lg">{{ trans 'I choose X' }}</button></center>
+    </div>
+</div>
+</div>
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-header">
+               <h3>Candidate Y</h3>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>The candidate solved <b>6</b> tasks correctly.</p>
+                    <p>The candidate estimated to be better than a random other participant with probability
+                        <b>60%</b></p>
+                </blockquote><br>
+                  <center><button type="button" id="btn_submit" value="Y" name="hire"
+                          class="btn btn-outline-primary btn-lg">{{ trans 'I choose Y' }}</button></center>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<p>Your taks is to choose which of the two Candidates <i>to "hire"</i> (by clicking on the corresponding button).
+</p>
+<p>What does <i>to "hire"</i> mean?</p>
+<ul>
+    <li>In a second stage, both candidates repeated the identification task for {{time}} seconds.</li>
+    <li>Both candidates were informed that if they were hired by you, they would earn {{piece_rate}} for every problem they solved correctly.</li>
+    <li>For each problem solved correctly by the candidate you hire you will earn <span
+            style="font-weight: bold;">{{C.MULTIPLIER}}</span>.</li>
+</ul>
+<p>You will choose which of the two candidates to hire, before knowing their actual performance in the second stage. You will only know the performance of the candidates in the first stage, but only the performance in the second stage will define your actual payment.</p>
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
+        <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'CONTINUE' }}</button>
+    </div>
+    <div class="col-md-5"></div>
+</div>
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

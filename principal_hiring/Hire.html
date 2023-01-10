@@ -1,0 +1,94 @@
+{{ block title }}
+    Hiring
+{{ endblock }}
+
+
+{{ block content }}
+<div class="container box">
+
+<!-- RANDOMIZE DISPLAY-->
+{{ if display == 0 }}
+    <div class="row">
+    <div class="col-sm">
+<div class="card">
+    <div class="card-header">
+        <h3>Candidate X</h3>
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>The candidate solved <b>{{performance_A}}</b> tasks correctly</p>
+              <p>The candidate estimated to be better than a random other participant with probability
+                  <b>{{beliefs_A}}%</b></p>
+        </blockquote><br>
+         <center><button id="btn_submit" value="A" name="hire"
+                 class="btn btn-outline-primary btn-lg">{{ trans 'I choose X' }}</button></center>
+    </div>
+</div>
+</div>
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-header">
+               <h3>Candidate Y</h3>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>The candidate solved <b>{{performance_B}}</b> tasks correctly.</p>
+                    <p>The candidate estimated to be better than a random other participant with probability
+                        <b>{{beliefs_B}}%</b></p>
+                </blockquote><br>
+                  <center><button id="btn_submit" value="B" name="hire"
+                          class="btn btn-outline-primary btn-lg">{{ trans 'I choose Y' }}</button></center>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{{ else }}
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Candidate X</h3>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>The candidate solved <b>{{performance_B}}</b> tasks correctly.</p>
+                        <p>The candidate estimated to be better than a random other participant with probability
+                            <b>{{beliefs_B}}%</b></p>
+                    </blockquote><br>
+                    <center><button id="btn_submit" value="B" name="hire"
+                            class="btn btn-outline-primary btn-lg">{{ trans 'I choose X' }}</button></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Candidate Y</h3>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>The candidate solved <b>{{performance_A}}</b> tasks correctly</p>
+                        <p>The candidate estimated to be better than a random other participant with probability
+                            <b>{{beliefs_A}}%</b></p>
+                    </blockquote><br>
+                    <center><button id="btn_submit" value="A" name="hire"
+                            class="btn btn-outline-primary btn-lg">{{ trans 'I choose Y' }}</button></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ endif }}
+
+</div>
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

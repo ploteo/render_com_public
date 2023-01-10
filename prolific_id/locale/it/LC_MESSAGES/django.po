@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-21 10:19+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/prolific_id/ProlificID.html:11
+msgid ""
+"Please switch off any source of distraction so you can focus on this study."
+msgstr ""
+"Per favore allontana le possibili fonti di distrazione per poterti "
+"concentrare sullo studio."
+
+#: templates/prolific_id/ProlificID.html:15
+msgid "Please enter your Prolific ID here"
+msgstr "Inserisci qui il tuo Prolific ID"
+
+#: templates/prolific_id/ProlificID.html:18
+msgid ""
+"The prolific ID is your personal identifier (24 alphanumeric characters)."
+msgstr "Il prolific ID è il tuo identificativo (24 caratteri alfanumerici)"
+
+#: templates/prolific_id/ProlificID.html:26
+msgid ""
+"Please report below the following code to confirm that you are not a robot"
+msgstr ""
+"Trascrivi sotto il seguente codice per confermare di non essere un robot."
+
+#: templates/prolific_id/ProlificID.html:35
+msgid "CODE HERE"
+msgstr "CODICE QUI"
+
+#: templates/prolific_id/ProlificID.html:46
+msgid "Continue"
+msgstr "Continua"

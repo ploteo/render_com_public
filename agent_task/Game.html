@@ -1,0 +1,76 @@
+{{ block styles  }}
+    <link href="{% static 'real_effort.css' %}" rel="stylesheet"/>
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
+{{ endblock }}
+
+{{ block title }}
+<h1>Decode</h1>
+{{ endblock }}
+
+{{ block content }}
+
+{{ include C.INSTRUCTIONS_TEMPLATE }} <br>
+
+<div class="container box">
+    <div class="row">
+        <div class="col-sm">
+            <h3>You have <span id="time-left"></span> seconds left</h3>
+        </div>
+               <div class="col-sm">
+               </div>
+        <div class="col-sm">
+            <h3>Solved: <span id="solved-txt" style="color:green"></span> | Failed: <span id="failed-txt"
+                    style="color:red"></span></h3>
+
+        </div>
+    </div>
+
+
+<div class="d-flex flex-column align-items-center">
+
+    <h3>
+        Problem <span id="iter-txt"></span>
+    </h3>
+    <img class="captcha m-1" id="captcha-img">
+<br>
+    <div class="input-group m-1">
+
+        <input type="{{ input_type }}" id="answer-inp" class="form-control"
+               placeholder="{{ placeholder }}"
+               autocorrect="off" autocapitalize="off" spellcheck="false">
+        <button type="button" id="submit-btn" class="btn btn-outline-secondary">Submit</button>
+    </div>
+
+    <p class="warn" id="warning-txt"></p>
+
+    {{ if DEBUG }}
+    <button type="button" id="cheat-btn" class="btn btn-dark">Cheat</button>
+    {{ endif }}
+</div>
+</div>
+<br>
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<script>
+    let customTimerEle = document.getElementById('time-left');
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $('.otree-timer__time-left').on('update.countdown', function (event) {
+            customTimerEle.innerText = event.offset.totalSeconds;
+        });
+    });
+
+</script>
+
+<script src="{{ static 'real_effort.js' }}"></script>
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+{{ if DEBUG }}<script src="{{ static 'real_effort_cheating.js' }}"></script>{{ endif }}
+{{ endblock }}

@@ -1,0 +1,53 @@
+{{ block title }}
+
+<h1>Welcome to <b>Part 1</b></h1>
+
+{{ endblock }}
+
+{{ block content }}
+
+<!-- ROUND 1 AGENT-->
+
+<div class="container box">
+<p>
+You will now face a series of problems. The problems have all the same structure.
+</p>
+<p>
+The following is an example of the problem: you need to "convert" the numbers reported in the lower panel into letters
+according to the conversion table in the upper panel.
+    </p>
+<p>
+<center><img src="{{ static "demo_task.png" }}" width=400/></center>
+</p>
+<p>In this example, the solution to this problem is: <i>MDQEP</i></p>
+<p>
+You have <span style="font-weight: bold;">{{time}}</span> seconds to solve as many problems as you can.
+</p>
+<p>
+You earn <span style="font-weight: bold;">{{piece_rate}}</span> for every problem you solve correctly.
+</p>
+<p>
+When you are ready, click on the START button to start solving the problems.
+</p>
+</div>
+
+
+<br><br>
+
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
+        <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'START' }}</button>
+    </div>
+    <div class="col-md-5"></div>
+</div>
+
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

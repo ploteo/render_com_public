@@ -1,0 +1,68 @@
+{{ block title }}
+
+<h1>Welcome to <b>Part 3</b></h1>
+
+{{ endblock }}
+
+{{ block content }}
+
+<!-- ROUND 2 AGENT-->
+
+<div class="container box">
+<p>
+    You will now face the same task you faced in Part 1 (see example below)
+</p>
+<center><img src="{{ static "demo_task.png" }}" width=400 /></center>
+
+<p>
+    You have <span style="font-weight: bold;">{{time}}</span> seconds to solve as many problems as you can.
+</p>
+
+<!------------------------------------------------------>
+<p>The earnings in this part are defined as follows:</p>
+<ul>
+    <li>
+        Your performance in Part 1 will be displayed to a participant, that we call Player B, in a session that will take place in the afternoon. Together with your performance, the Player B will see the performance of another participant to the current session that performed similarly to you. 
+    </li>
+    <li>
+    The Player B will choose whom to hire between you and the other. 
+    </li>
+        <ul>
+        <li>
+        If you hired, you earn <span style="font-weight: bold;">{{piece_rate}}</span> for every problem you solve correctly. 
+        </li>
+        <li>
+            If you are not hired, you earn nothing in this Part, irrespective of the number of problems solved.
+        </li>
+        </ul>
+        <li>The Player B earns <span style="font-weight: bold;">{{piece_rate}}</span> for every problem solved by the hired participant.</li>
+</ul>
+<p>You will solve the problems before knowing whether you are hired or not. You will be notified tomorrow if you were
+hired or not (and of the associated earnings in this part).</p>
+
+<!------------------------------------------------------>
+
+<p>
+    When you are ready, click on the START button to start solving the problems.
+</p>
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
+        <button id="btn_submit" class="btn btn-outline-primary btn-lg">{{ trans 'START' }}</button>
+    </div>
+    <div class="col-md-5"></div>
+</div>
+
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+<link href="{{ static 'mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}
