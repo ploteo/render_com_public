@@ -23,6 +23,8 @@ REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = False
 POINTS_CUSTOM_NAME = 'Tokens'
 
+SESSION_FIELDS = ['params']
+
 SESSION_CONFIGS = [ 
     dict(
         name="MAIN_Agent_1",
