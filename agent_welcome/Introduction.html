@@ -11,17 +11,21 @@ Welcome
 
 <p>Today is <b>Day {{day}}</b>.</p>
  
-<p>In each day, you take part in 3 parts: <i>Part 1</i>, <i>Part 2</i>, and <i>Part 3</i>.</p>
+<p>Each day, you participate in 3 parts: <i>Part 1</i>, <i>Part 2</i>, and <i>Part 3</i>.</p>
 
 
 <center><img src="{{ static 'days.png' }}" width=400/></center>
 
 <p>You will now receive detailed instructions for Part 1.</p>
 <p>Instructions for the other parts will follow.
+
 {{if day == 2}}
+
 <i>Please notice that the instructions you receive today are the same you received yesterday.</i></p>
-<p>Before starting, you will be notified whether yesterday you were hired or not by the Player A you were associated with.</p>
+<p>Before starting, you will be notified whether yesterday you were hired or not by the Player B you were matched with.</p>
+
 {{ endif }}
+
 </div>
 <br><br>
 
