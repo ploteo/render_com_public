@@ -28,7 +28,7 @@ SESSION_FIELDS = ['params']
 SESSION_CONFIGS = [ 
     dict(name="Ethnicity",
          display_name="Ethnicity",
-            num_demo_participants=6,
+            num_demo_participants=50,
             app_sequence=['moradi']
     ),
     # dict(
