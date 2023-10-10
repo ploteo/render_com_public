@@ -1,0 +1,87 @@
+{{ block title }}
+Über Sie
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<div class="row">
+      <div class="col-md-12">
+  <h3> Ihr Geschlecht? </h3>
+  {{ form.gender }}
+</div>
+</div>
+
+  <div class="row">
+      <div class="col-md-12">
+    <h3> Ihr Alter? </h3>
+    {{ form.age }}
+  </div>
+  </div>
+  <br>
+
+  <div class="row">
+          <div class="col-md-12">
+    <h3> Ihr Wohnort? </h3>
+    {{ form.residence }}
+  </div>
+</div>
+
+  <div class="row">
+
+          <div class="col-md-12">
+<h3> In welchem Ort sind Sie aufgewachsen? </h3>
+{{ form.grew_up }}
+    </div>
+    </div>
+
+  <div class="row">
+  
+    <div class="col-md-12">
+      <h3> Sind Sie in einem Weiler aufgewachsen? </h3>
+      {{ form.weiler }}
+    </div>
+  </div>
+
+    <div class="row">
+    
+      <div class="col-md-12">
+        <h3> Sind Sie in einer Fraktion (d.h. nicht dem Hauptort) aufgewachsen? </h3>
+        {{ form.fraktion }}
+      </div>
+    </div>
+
+
+  <div class="row">
+              <div class="col-md-12">
+    <h3> Muttersprache (Mehrfachnennungen möglich): </h3>
+    {{ form.mother_tongue}}
+  </div>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button id = "button_prosegui" class="btn btn-outline-primary btn-lg">Weiter</button>
+    </div>
+  </div>
+
+
+
+{{ endblock }}
+
+{{ block scripts }}
+
+{{ endblock }}
+
+  {{ block styles }}
+  
+  <link href="{{ static "moradi/mystyle.css" }}" rel="stylesheet">
+  
+  {{ endblock }}

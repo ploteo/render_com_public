@@ -1,0 +1,35 @@
+{{ block title }}
+
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+<h3>Wie stark empfinden Sie den Unterschied zwischen den Ortsnamen? <i>(1=sehr ähnlich ... 5=sehr unterschiedlich)</i></h3>
+
+{{body}}
+  </div>
+
+  <!------------------------------------------------------>
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button id = "button_prosegui" class="btn btn-outline-primary btn-lg">Ende</button>
+    </div>
+  </div>
+
+{{ endblock }}
+
+{{ block scripts }}
+
+{{ endblock }}
+
+  {{ block styles }}
+  
+  <link href="{{ static "moradi/mystyle.css" }}" rel="stylesheet">
+  
+  {{ endblock }}

@@ -26,26 +26,31 @@ POINTS_CUSTOM_NAME = 'Tokens'
 SESSION_FIELDS = ['params']
 
 SESSION_CONFIGS = [ 
-    dict(
-        name="MAIN_Agent_1",
-        display_name="Agent Day 1",
-        num_demo_participants=6,
-        app_sequence=["prolific_id", "agent_welcome", "agent_task"],
-        day=1  # day = 1 they work first day; day = 2 they also get feedback about earnings in day 1
+    dict(name="Ethnicity",
+         display_name="Ethnicity",
+            num_demo_participants=6,
+            app_sequence=['moradi']
     ),
-    dict(
-        name="MAIN_Agent_2",
-        display_name="Agent Day 2",
-        num_demo_participants=6,
-        app_sequence=["prolific_id", "agent_welcome", "agent_task"],
-        day=2  # day = 1 they work first day; day = 2 they also get feedback about earnings in day 1
-    ),
-    dict(
-        name="MAIN_Principal",
-        display_name="Principal",
-        num_demo_participants=3,
-        app_sequence=["prolific_id", "principal_hiring"]
-    )
+    # dict(
+    #     name="MAIN_Agent_1",
+    #     display_name="Agent Day 1",
+    #     num_demo_participants=6,
+    #     app_sequence=["prolific_id", "agent_welcome", "agent_task"],
+    #     day=1  # day = 1 they work first day; day = 2 they also get feedback about earnings in day 1
+    # ),
+    # dict(
+    #     name="MAIN_Agent_2",
+    #     display_name="Agent Day 2",
+    #     num_demo_participants=6,
+    #     app_sequence=["prolific_id", "agent_welcome", "agent_task"],
+    #     day=2  # day = 1 they work first day; day = 2 they also get feedback about earnings in day 1
+    # ),
+    # dict(
+    #     name="MAIN_Principal",
+    #     display_name="Principal",
+    #     num_demo_participants=3,
+    #     app_sequence=["prolific_id", "principal_hiring"]
+    # )
         #    dict(name = 'Beauty_ITA',
         # app_sequence = ['beauty_contest_ITA'],
         # num_demo_participants= 3

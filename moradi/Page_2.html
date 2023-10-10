@@ -1,0 +1,63 @@
+{{ block title }}
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+  <h3>4. Wie wichtig sind Ihrer Meinung nach für das gemeinsame Erinnern? <i>(1=überhaupt nicht wichtig ... 5=sehr wichtig)</i></h3>
+
+{{tab_4}}
+
+
+  <h3>5. Wie wichtig ist Ihrer Meinung das Überliefern von Familiengeschichte? <i>(1=überhaupt nicht wichtig ... 5=sehr wichtig)</i>
+  </h3>
+  
+  {{tab_5}}
+
+  <h3>6. An welche historischen Ereignisse sollte Ihrer Meinung nach weniger bzw. mehr erinnert werden? <i>(1=deutlich weniger,
+  2=weniger, 3 gleich, 4=mehr, 5=deutlich mehr)</i>
+  </h3>
+  
+  {{tab_6}}
+
+Andere (bitte nennen) <br>
+  <textarea id="id_Q6_free" name="Q6_free" rows="1" cols="30">
+  </textarea>
+
+  <h3>7. An welche historischen Personen sollte Ihrer Meinung nach weniger/mehr erinnert werden? <i>(1=deutlich weniger,
+  2=weniger, 3 gleich, 4=mehr, 5=deutlich mehr)</i>. 
+  <!-- Wie meinen Sie denken andere? -->
+  </h3>
+  
+  {{tab_7}}
+
+Andere (bitte nennen) <br>
+<textarea id="id_Q7_free" name="Q7_free" rows="1" cols="30">
+</textarea>
+
+</div>
+
+
+<!-- #--------------------------------------------- -->
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button id = "button_prosegui" class="btn btn-outline-primary btn-lg">Weiter</button>
+    </div>
+  </div>
+
+{{ endblock }}
+
+{{ block scripts }}
+
+{{ endblock }}
+
+  {{ block styles }}
+  
+  <link href="{{ static "moradi/mystyle.css" }}" rel="stylesheet">
+  
+  {{ endblock }}

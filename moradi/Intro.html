@@ -1,0 +1,49 @@
+{{ block title }} 
+Willkommen!
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+
+<p>Diese Studie wird von den Universitäten Bozen, Innsbruck und Trento durchgeführt. Projektverantwortlicher ist Prof. Dr.
+Alexander Moradi. Um an dieser Studie teilnehmen zu können, müssen Sie mindestens 18 Jahre alt und in Südtirol geboren
+worden sein.
+
+<p>Bitte beachten Sie, dass es für die Aussagekraft unserer Studie sehr wichtig ist, dass Sie ehrlich antworten und die
+Fragen vor der Beantwortung sorgfältig lesen. Für den Erfolg unseres Forschungsprojekts ist es außerdem sehr wichtig,
+dass Sie die gesamte Umfrage ausfüllen. Das Ausfüllen dieser Umfrage sollte (durchschnittlich) etwa 10 Minuten dauern.
+Wir belohnen Ihre Teilnahme. Für die Teilnahme an dieser Umfrage erhalten Sie einen Amazon Voucher über X €, den wir
+Ihnen per Email innerhalb von 3 Tagen zusenden.</p>
+
+<p><i>Hinweis:</i> Ihre Teilnahme an dieser Studie ist völlig freiwillig und anonym. Ihr Name wird niemals gespeichert. Ihre
+Antworten fließen in eine wissenschaftliche Studie ein und werden in aggregierter Form aufbereitet. Sie dürfen gerne
+Kontakt mit uns aufnehmen.</p>
+
+<p>Mehr Informationen zum Forschungsprojekt finden Sie hier <a href="" target="_blank">Link</a>.</p>
+
+{{ formfield player.participation }}
+
+</div>
+
+<div class="row">
+<div class="col-sm-2">&nbsp;</div>
+</div>
+
+<div class="row"> <br>
+<div class="col-sm-5">&nbsp;</div>
+<div class="col-sm-4">
+  <button id = "button_prosegui" class="btn btn-outline-primary btn-lg">Weiter</button>
+</div>
+</div>
+
+
+{{ endblock }}
+
+
+  {{ block styles }}
+  
+  <link href="{{ static "moradi/mystyle.css" }}" rel="stylesheet">
+  
+  {{ endblock }}
