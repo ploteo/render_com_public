@@ -215,6 +215,10 @@ class Background(Page):
     form_model = 'player'
     form_fields = ['age','gender','residence','grew_up','weiler','fraktion','mother_tongue']
 
+    def is_displayed(player):
+        player_1 = player.in_round(1)
+        return player_1.participation == 1
+
     def before_next_page(player, timeout_happened):
         player.participant.places = []
         info = []
@@ -750,7 +754,6 @@ class Places(Page):
     # form_fields = ['gender']
 
     def is_displayed(player):
-        player.round_number == C.NUM_ROUNDS
         player_1 = player.in_round(1)
         return player_1.participation == 1
 
@@ -795,6 +798,16 @@ class Places(Page):
         return {'body': tab,
                 }
     
+class Endpage(Page):
+    @staticmethod
+    def vars_for_template(player):
+        player_1 = player.in_round(1)
+        if player_1.participation == 0:
+            return {'body': "<p>Wir bedauern, dass Sie nicht an unserem Forschungsprojekt teilnehmen wollen.</p> <p>Wir bedanken uns für Ihr Interesse und Zeit. Mit freundlichen Grüßen, Prof. Dr. Alexander Moradi (UNIBZ), Prof. Matteo Ploner (UNITN) und Ass. Prof. Daniela Glätzle-Rützler (UIBK). </p> <p>Sie können nun das Fenster schließen.</p>"}
+            
+        else:
+            return {'body': "<p>Vielen Dank für Ihre Teilnahme an diesem Forschungsprojekt. </p> <p> Mit freundlichen Grüßen, Prof. Dr. Alexander Moradi (UNIBZ), Prof. Matteo Ploner (UNITN) und Ass. Prof. Daniela Glätzle-Rützler (UIBK). </p> <p>Sie können nun das Fenster schließen.</p>"}
+    
 #--------------------------------------------------------------
 
-page_sequence = [Intro, Background, Page_1, Page_2, Page_3, Places]
+page_sequence = [Intro, Background, Page_1, Page_2, Page_3, Places, Endpage]
