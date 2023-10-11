@@ -798,7 +798,7 @@ class Places(Page):
         return {'body': tab,
                 }
     
-class Endpage(Page):
+class EndPage(Page):
     @staticmethod
     def vars_for_template(player):
         player_1 = player.in_round(1)
@@ -810,4 +810,4 @@ class Endpage(Page):
     
 #--------------------------------------------------------------
 
-page_sequence = [Intro, Background, Page_1, Page_2, Page_3, Places, Endpage]
+page_sequence = [Intro, Background, Page_1, Page_2, Page_3, Places, EndPage]
