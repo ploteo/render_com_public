@@ -57,7 +57,7 @@ SESSION_CONFIGS = [
         # )
 ]
 
-PARTICIPANT_FIELDS = ['returns', 'timeout','prolific_id', 'performance']
+PARTICIPANT_FIELDS = ['returns', 'timeout','prolific_id', 'performance','places']
 
 
 ROOMS = [
