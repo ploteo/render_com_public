@@ -9,27 +9,27 @@ SESSION_CONFIGS = [
     dict(
         name='G2',#Coord mean of transportation
         app_sequence=['G2'],
-        num_demo_participants=28,
+        num_demo_participants=12,
     ),
         dict(
         name='G3',#IG with comp
         app_sequence=['G3'],
-        num_demo_participants=3,
+        num_demo_participants=6,
     ),
         dict(
-        name='G4',#IG with comp
+        name='G4',#
         app_sequence=['G4'],
         num_demo_participants=2,
     ),
         dict(
-        name='G5',#IG with comp
+        name='G5',#
         app_sequence=['G5'],
-        num_demo_participants=3,
+        num_demo_participants=6,
     ),
         dict(
-        name='G6',#IG with comp
+        name='G6',#
         app_sequence=['G6'],
-        num_demo_participants=4,
+        num_demo_participants=8,
     ),
 ]
 
