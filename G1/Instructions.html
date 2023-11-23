@@ -1,0 +1,35 @@
+{{ block title }}
+    Welcome
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+<p>You will be presented with different charitable causes. For each case, you will be
+provided with an initial endowment of 100 experimental currency units (ECU; 1 ECU
+= 0,1€).</p>
+
+<p>You will be asked to state how many ECU you are willing to donate to each cause.
+You can only enter whole/integer numbers.</p>
+<p>After the experiment, a random selection will determine one of your allocated amounts
+for an actual donation, and you'll receive the remaining difference from your initial
+endowment.</p>
+<p><i>Example:</i> Out of the provided 100 ECU, you allocated 50 ECU to cause X, which was
+randomly selected for an actual donation on your behalf. Hence, 50 ECU will be
+donated to cause X, and you'll receive the remaining 50 ECU.</p>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G1/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

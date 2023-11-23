@@ -1,0 +1,47 @@
+{{ block title }}
+    Your opinion
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<h3>1. Suppose you had $100 in a saving account and the interest rate was 2% per year. After 5 years, how much do you think you would have in the account if you left the money to grow?</h3>
+
+    {{ formfield player.fin_lit_1 label=""}}
+
+<br>
+<hr>
+<h3>2. Imagine that the interest rate on your savings account was 1% per year and inflation was 2% per year. After 1 year, with the money in this account, would you be able to buy ...</h3>
+
+    {{ formfield player.fin_lit_2 label=""}}
+
+<br>
+<hr>
+<h3>3. Do you think the following is true or false? Buying a single company stock usually provides a safer return than a stock mutual fund.</h3>
+
+    {{ formfield player.fin_lit_3 label=""}}
+
+<br>
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">End</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

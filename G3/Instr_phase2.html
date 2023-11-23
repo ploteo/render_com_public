@@ -1,0 +1,56 @@
+{{ block title }}
+Second phase
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+<p>This phase of the experiment is composed of three different rounds. In each of them, you will be
+assigned an initial endowment of 100 tokens and will be required to take your investment decision
+according to the rules explained before.</p>
+
+<p>In this phase you will participate in a tournament with the other participants of the experiment
+according to the payoff obtained in each round: higher earnings result in a higher position in the
+ranking.</p>
+
+<p>The screen will be divided in two parts: firstly, you will be required to indicate the share of the initial
+endowment that you are willing to invest. Secondly, you will be asked to indicate the chosen investment
+option among the alternatives.</p>
+
+<p>Once you have made your choices, you can click <button type="button" name="btn_submit" value="True" class="btn btn-primary btn-large">
+    <span style="font-size:14pt">Confirm</span>
+</button>. The following screen will show you
+the participants that ranked in the first three positions. Below, it will be indicated the position that
+you ranked and your payoff for the round. In case in which there are more than one player that will
+rank in one of the first 3 positions, they will share the same position. Rank of participants will show
+their different outcome obtained, but it won’t disclose neither their invested share x nor the chosen
+investment option. You can then click on the button <button type="button" name="btn_submit" value="True" class="btn btn-primary btn-large">
+    <span style="font-size:14pt">Continue</span>
+</button> in order to proceed to next
+round of the phase.</p>
+
+<p>In this phase, the payoff for each round will be computed according to the following function:</p>
+
+<p><b>π = share of initial endowment not invested + outcome of the investment options chosen</b></p> 
+
+<p>Final outcome of this phase will be the payoff of one randomly selected round among the three played.</p>
+
+
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">I am ready</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

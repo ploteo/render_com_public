@@ -1,0 +1,42 @@
+{{ block title }}
+Contributions (Stage {{ player.stage}}: Round {{ round }})
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+
+<p>These are the contributions of the citizens.</p>
+<p>in bold your contribution.</p>
+{{ table }}
+
+{{ if round == 5}}
+<p>This is your payoff:  {{player.payoff}} </p>
+
+<p>This is the overall donation given to {{ if player.stage == 1 }}The Children Heritage Foundation{{endif}} {{ if player.stage == 2 }}The Nature Conservancy{{endif}} {{ if player.stage == 3 }}The Pediatric Cancer Research Alliance{{endif}}: {{ donation}} points.</p>
+
+{{ endif }}
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G6/mystyle.css' }}" rel="stylesheet">
+
+<style>
+    input[type=radio] {
+        transform: scale(1.3);
+        margin: 12px -10px 0px -30px;
+    }
+</style>
+{{ endblock }}

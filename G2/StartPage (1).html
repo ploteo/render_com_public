@@ -1,0 +1,112 @@
+{{ block title }}
+    Welcome
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+<p>Welcome to our experiment!</p>
+<p>In this simulation, you will play the role of a student living in a city with several student apartments. Your goal is
+to reach the university by choosing a means of transportation.</p>
+
+<p>You will have three means of transportation to choose from, each with its own cost, utility and emissions. Your task is
+to choose, in each round, which means of transportation you want to use.
+The game will consist of multiple rounds. In each round, you will get an endowment of 30 points to pay for your chosen
+transportation method.</p>
+
+<p>All information will be presented in the following form. Please note that the values might change during the game:</p>
+
+{{ if player.type == 'A' }}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Cost</th>
+            <th>Utility</th>
+            <th>Emissions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car</td>
+            <td>30</td>
+            <td>140</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Bus</td>
+            <td>10</td>
+            <td>100</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Bike</td>
+            <td>0</td>
+            <td>80</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
+
+{{ else }}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Cost</th>
+            <th>Utility</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car</td>
+            <td>30</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>Bus</td>
+            <td>10</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Bike</td>
+            <td>0</td>
+            <td>80</td>
+        </tr>
+    </tbody>
+</table>
+
+{{ endif }}
+
+<p>Your payoff per round is calculated as follows: Pi = (Endowment - Cost) + Utility</p>
+<p>At the end of the game your total payoff will be given by the sum of the payoffs in each round.
+1 unit of payoff corresponds to €0.01.</p>
+
+
+{{ if player.type == 'A' }}
+
+<p>Be aware that each means of transportation has associated emissions.</p>
+<p>These emissions contribute to the overall environmental impact.</p>
+<p>Every time the aggregate pollution of <i>your apartment</i> exceeds the threshold of <b>13</b>, the utility will be reduced for all
+future rounds and, therefore, also the payoff of each participant.</p>
+
+{{ endif }}
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

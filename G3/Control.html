@@ -1,0 +1,38 @@
+{{ block title }}
+    Control questions
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+<h2>Question 1 </h2>
+<p>You must invest the same share of the initial endowment in each round of the different phases</p>
+
+{{ formfield player.ctrl_1 label=""}}
+
+<h2>Question 2</h2>
+<p>The outcome of each phase will be</p>
+
+{{ formfield player.ctrl_2 label=""}}
+
+<h2>Question 3</h2>
+<p>If the outcome of the first phase is equal to 20 tokens, the outcome of the second phase is equal to 50 tokens and the outcome of the third phase is equal to 30 tokens, you final earnings are equal to</p> 
+
+{{ formfield player.ctrl_3 label=""}}
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Check my answers</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

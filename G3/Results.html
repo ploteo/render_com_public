@@ -1,0 +1,107 @@
+{{ block title }}
+    Earnings from Round {{ player.round_number }}
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+{{ if player.treatment == "ctrl"}}
+<p>In this round you earned {{ player.payoff }}</p>
+
+
+
+{{ endif }}
+
+
+{{ if player.treatment == "tournament"}}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th>ID</th>
+            <th>Earnings</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td> {{ first_ID }}</td>
+            <td> {{ first_earnings }} </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>{{ second_ID }}</td>
+            <td> {{ second_earnings }} </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>{{ third_ID }}</td>
+            <td>{{ third_earnings }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The outcome of your investment decision allowed you to reach position {{ own_rank }} in the ranking.</p>
+<p>In this round, you earned a payoff equal to {{own_gains}}.</p>
+
+{{ endif }}
+
+{{ if player.treatment == "money"}}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th>ID</th>
+            <th>Earnings</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td> {{ first_ID }}</td>
+            <td> {{ first_earnings }} </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>{{ second_ID }}</td>
+            <td> {{ second_earnings }} </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>{{ third_ID }}</td>
+            <td>{{ third_earnings }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The outcome of your investment decision allowed you to reach position {{ own_rank }} in the ranking.</p>
+<p>In this round, you earned a payoff equal to {{own_gains}}.</p>
+
+<p>According to your score, you will receive an additional compensation equal to {{ bonus }}.</p>
+<p>Your aggregate pyment in this round is equal to {{player.payoff_plus }}.</p>
+
+{{ endif }}
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G3/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

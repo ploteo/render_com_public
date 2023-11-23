@@ -1,0 +1,33 @@
+{{ block title }}
+    Page title
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+<p>This donation appeal was chosen randomly.</p>
+
+<p><i>{{cause}}</i></p>
+
+{{ if donation == 0 }}
+<p>You decided to not donate to this cause.</p>
+{{ else }}
+<p>{{donation}} ECU will be given to this charity on your behalf.</p>
+{{ endif }}
+
+{{ if donation != 0 }}
+
+<p>Hence, you'll receive the remaining {{ remainder }} ECU (EUR {{ remainder_EURO}}).</p>
+
+{{ endif }}
+
+<p>Thank you for participating in our experiment!</p>
+
+</div>
+
+    {{ next_button }}
+{{ endblock }}
+
+
+{{ block styles }}
+<link href="{{ static 'G1/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

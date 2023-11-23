@@ -1,0 +1,55 @@
+{{ block title }}
+    {{ if player.stage == 2 }}
+       Stage 2
+    {{ else }}
+        Stage 3
+    {{ endif }}
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+<!-- STAGE 2 -->
+
+{{ if player.stage == 2 }}
+
+<p>This stage consists of two Tasks for the Financial Advisors and if you are a
+client, you will participate actively just in the second one.
+<p>The financial advisor during the task will be asked to decide between two
+strategies about investment.</p>
+<p>The client will be provided with an endowment of 1.000 ECU for each
+Tasks.</p>
+
+{{ endif }}
+
+{{ if player.stage == 3 }}
+<p>This stage consists of two Tasks for the Financial Advisors and if you are a client, you will participate actively just
+in the second one.</p>
+<p>The financial advisor during the task will be asked to decide between three strategies about investment.</p>
+<p>The client will be provided with an endowment of 1.000 ECU for each Tasks</p>
+
+<p>The third option which is know available is related to the fixed fee commission.</p>
+<p>The fixed fee commission is a different way to calculate the financial advisor earning, which is calculated
+based on a fixed percentage , regardless of the cost to the client.</p>
+{{ endif }}
+
+
+<i>When done, please click on the button “Continue”.</i>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G4/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

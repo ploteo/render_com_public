@@ -1,0 +1,75 @@
+{{ block title }}
+First phase
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+
+<p>This phase of the experiment is composed of three different rounds. In each of them, you will be
+assigned an initial endowment of 100 tokens and will be required to take your investment decision
+according to the rules explained before.</p>
+
+<p>The screen will be divided into two parts: firstly, you will be required to indicate the share of the initial
+endowment that you are willing to invest. Secondly, you will be asked to indicate the chosen investment
+option among the alternatives. The investment options will be the same as indicated before </p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A</td>
+            <td>75% chance of gaining 2x and 25% chance gaining x</td>
+
+
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>50% chance of gaining 4x and 50% chance of losing half the investment x</td>
+
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>25% chance of gaining 10x and 75% chance of losing your investment x</td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+<p>Once you have made your choices, you can click <button type="button" name="btn_submit" value="True" class="btn btn-primary btn-large">
+    <span style="font-size:14pt">I am ready</span>
+</button>. The following screen will show you the
+payoff obtained. You can then click on the button <button type="button" name="btn_submit" value="True" class="btn btn-primary btn-large">
+    <span style="font-size:14pt">Confirm</span>
+</button>  in order to proceed to next round
+of the phase. In this phase, the payoff for each round will be computed according to the following
+function:</p>
+
+<p><b>π = share of initial endowment not invested + outcome of the investment options chosen</b></p> 
+
+<p>At the end of each round you will be communicated your payoff. Final outcome of this phase will be
+the payoff of one randomly selected round among the three played. </p>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">I am ready</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

@@ -1,0 +1,39 @@
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<p>Your total payoff from the game is {{ tot_payoffs }}.</p>
+
+<p>Congratulations!</p>
+
+<p>Thank you for participating to our experiment!</p>
+
+<p>To help us gather some additional information for our analysis, please take a moment to answer the survey questions.</p>
+<p>Your responses are confidential, anonymous and will be used for research purposes only.</p>
+
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue to the survey</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

@@ -1,0 +1,62 @@
+{{ block title }}
+   Please answer the following questions
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<h3>I do volunteer work.</h3>
+<center>
+    {{ formfield player.Cvol label=""}}
+</center>
+<br>
+<hr>
+<h3>I give money to charitable organizations.</h3>
+<center>
+    {{ formfield player.Cdon label=""}}
+</center>
+<br>
+<hr>
+<h3>I find it difficult to put myself in somebody else’s shoes.</h3>
+<center>
+    {{ formfield player.Cemp label=""}}
+</center>
+<br>
+<hr>
+<h3>My personal connection to a cause plays a big role in my decision to
+donate. </h3>
+<center>
+    {{ formfield player.Cper label=""}}
+</center>
+<br>
+<hr>
+<h3>I am more inclined to donate to causes that address immediate needs. </h3>
+<center>
+    {{ formfield player.Ctim label=""}}
+</center>
+<br>
+<hr>
+<h3>I often find myself worrying about the future of the world. </h3>
+<center>
+    {{ formfield player.Cfut label=""}}
+</center>
+<br>
+<hr>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G1/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

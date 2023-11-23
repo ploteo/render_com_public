@@ -1,0 +1,40 @@
+{{ block title }}
+    Some general information
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+
+<p>Financial advisors are responsible for assisting clients in managing their money,
+investments, and financial goals, helping them make informed decisions.
+In terms of remuneration, financial advisors typically receive a commission for the
+products and services they sell.</p>
+
+<p>The two main types of commission are the classic fee setting and the fixed fee. The
+classic fee setting is based on the principle of earning a commission based both on
+the invested amount and the performance of the investment. This means that the more the client risks, the more he can gain, the more the financial advisor can gain.</p>
+
+<p>On the other hand, the fixed fee involves the advisor earning a set amount,
+regardless of the risk that the client sustains. This means that the advisor’s
+earnings do not depend on the investment's level of risk.</p>
+
+<i>When done, please click on the button “Continue”.</i>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G4/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

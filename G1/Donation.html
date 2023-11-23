@@ -1,0 +1,29 @@
+{{ block title }}
+   Your donation 
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+{{card}}
+<br>
+<p>Please enter the amount you are willing to donate</p>
+
+{{ formfield player.donation }} 
+<i> A value in ECU between 0 and 100</i>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G1/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

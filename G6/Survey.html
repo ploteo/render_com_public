@@ -1,0 +1,37 @@
+{{ block title }}
+   Survey
+{{ endblock }}
+{{ block content }}
+<div class="container box">
+
+<h3>Listed below are statements about the relationship between humans and the environment. For each one, please indicate
+your level of agreement. <br> <i>(1=STRONGLY DISAGREE, 2=MILDLY DISAGREE, 3=UNSURE, 4=MILDLY AGREE, 5=STRONGLY AGREE)</i></h3>
+
+<p>{{table}}</p>
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">End</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G6/mystyle.css' }}" rel="stylesheet">
+
+<style>
+    input[type=radio] {
+        transform: scale(1.3);
+        margin: 12px -10px 0px -30px;
+    }
+</style>
+{{ endblock }}
+

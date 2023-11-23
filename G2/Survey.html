@@ -1,0 +1,77 @@
+{{ block title }}
+    Your opinion
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<h3>1. I would be willing to accept cuts in my standards of living, if it helped to protect the environment.</h3>
+
+    {{ formfield player.living_standards label=""}}
+
+<br>
+<hr>
+<h3>2. I would be willing to pay higher prices for goods and services, if it helped to protect the environment.</h3>
+
+    {{ formfield player.goods_services label=""}}
+
+<br>
+<hr>
+<h3>3. I would be willing to support higher taxes, if it helped to protect the environment.</h3>
+
+    {{ formfield player.taxes label=""}}
+
+<br>
+<hr>
+<h3>4. I would be willing to sacrifice some personal comforts, in order to save energy.</h3>
+
+    {{ formfield player.comforts label=""}}
+
+<br>
+<hr>
+<h3>5. I feel my own personal behavior can bring about positive environmental change.</h3>
+
+    {{ formfield player.own_behavior label=""}}
+
+<br>
+<hr>
+<h3>6. Which one of the following statements best describes how you feel about environmental issues?</h3>
+
+    {{ formfield player.feelings label=""}}
+
+<br>
+<hr>
+<h3>7. What percentage of your initial endowment would you be willing to pay to potentially reduce the negative externality for all the members of your group?</h3>
+
+    {{ formfield player.wtp label=""}}
+
+<br>
+<hr>
+<h3>8. Would you consider adjusting your daily transportation choices based on their environmental impact after participating in this experiment?</h3>
+
+    {{ formfield player.transportation_change label=""}}
+
+<br>
+<hr>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">End</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

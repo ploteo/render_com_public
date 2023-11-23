@@ -1,0 +1,56 @@
+{{ block title }}
+Your investment choice
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+
+{{ if investment_type == "LL" }}
+
+<p>You are presented with an investment choice in the</p>
+<p><b>Real Estate Industry</b></p>
+<p>60% Success rate, 40% Failure rate.</p>
+
+<p>If the investment succeeds, your return is 200%.</p>
+
+<p>The money you don't invest will be invested into another option with a fixed return of 4% and no risk.</p>
+
+{{ elif investment_type == "MM" }}
+
+<p>You are presented with an investment choice in the</p>
+<p><b>Consumer Technology Industry</b></p>
+<p>50% Success rate, 50% Failure rate.</p>
+<p>If the investment succeeds, your return is 200%.</p>
+<p>The money you don't invest will be invested into another option with a fixed return of 4% and no risk.</p>
+
+{{ elif investment_type == "HH" }}
+
+<p>You are presented with an investment choice in the</p>
+<p><b>Biotech Industry</b></p>
+<p>40% Success rate, 60% Failure rate.</p>
+<p>If the investment succeeds, your return is 800%.</p>
+<p>The money you don't invest will be invested into another option with a fixed return of 4% and no risk.</p>
+
+{{ endif }}
+
+{{ formfield player.investment label="How much will you allocate to this investment?"}}
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+
+{{ block styles }}
+
+<link href="{{ static 'G5/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

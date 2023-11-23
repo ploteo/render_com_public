@@ -1,0 +1,61 @@
+{{ block title }}
+Choose your investment (Round {{ player.round_number }})
+{{ endblock }}
+{{ block content }}
+
+
+
+<div class="container box">
+
+<h3>Choose</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+            <th>Your choice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A</td>
+            <td>75% chance of gaining 2x and 25% chance gaining x</td>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault1" value="A"></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>50% chance of gaining 4x and 50% chance of losing half the investment x</td>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault2" value="B"></td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>25% chance of gaining 10x and 75% chance of losing your investment x</td>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault3" value="C"></td>
+        </tr>
+    </tbody>
+    {{ formfield_errors 'investment_profile' }}
+</table>
+   
+<h3>Choose the amount invested</h3>
+
+I am willing to invest 
+{{ formfield player.investment label=""}} tokens 
+out of my budget of {{ C.ENDOWMENT }} tokens.
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Confirm</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G3/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

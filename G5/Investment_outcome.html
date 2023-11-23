@@ -1,0 +1,59 @@
+{{ block title }}
+Your investment choice
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+
+{{ if player.investment_type == "LL" }}
+
+<p>Given your choice, your <b>Real Estate</b> investment gave the following returns</p>
+
+{{ if win == True }} <p>The investment was succesfull and you earned 800% on your investment.</p> {{ endif }}
+{{ if win == False }} <p>The investment failed and you lost your investment.</p> {{ endif }}
+
+<p>You invested {{ player.investment }} and thus earned {{ player.payoff }}.</p>
+
+{{ elif player.investment_type == "MM" }}
+
+<p>Given your choice, your <b>Computer technology</b> investment gave the following returns</p>
+
+{{ if win == True }} <p>The investment was succesfull and you earned 800% on your investment.</p> {{ endif }}
+{{ if win == False }} <p>The investment failed and you lost your investment.</p> {{ endif }}
+
+<p>You invested {{ player.investment }} and thus earned {{ player.payoff }}.</p>
+
+{{ elif player.investment_type == "HH" }}
+
+<p>Given your choice, your <b>Biotech</b> investment gave the following returns</p>
+
+{{ if win == True }} <p>The investment was succesfull and you earned 800% on your investment.</p> {{ endif }}
+{{ if win == False }} <p>The investment failed and you lost your investment.</p> {{ endif }}
+
+<p>You invested {{ player.investment }} and thus earned {{ player.payoff }}.</p>
+
+{{ endif }}
+
+
+
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+
+{{ block styles }}
+
+<link href="{{ static 'G5/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

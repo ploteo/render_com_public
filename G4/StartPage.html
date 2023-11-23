@@ -1,0 +1,40 @@
+{{ block title }}
+    Welcome
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+<p>In this experiment you will be asked to take decisions concerning financial investments. You will
+be assigned to the “financial advisor” role or to the “client” role. Every financial advisor will be
+pared to one client, which will be the same for the entire experiment. Note that you will not know
+the identity of the other participants.</p>
+
+<p>The experiment consists of 3 different stages.</p>
+
+<p>In the first stage, which will be the same for all participants, you will be asked to choose between 10 different lotteries. The role assignment will take place right after this task.</p>
+
+<p>The second and third stage are divided in two different tasks. In both tasks the financial advisor will choose what investment to propose to the client. At the client will be given an initial
+endowment and he will be asked to accept or rejects the financial advisor offer.</p>
+
+<p>The payoff of every stage will be given at the end of the experiment, in this experiment will be used the ECU unit (experimental currency units) with this conversion rate: 10 ECU=0.02€.</p>
+
+<i>When done, please click on the button “Continue”.</i>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G4/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

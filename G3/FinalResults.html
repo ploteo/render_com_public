@@ -1,0 +1,31 @@
+{{ block title }}
+    Final Earnings
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<p>Rounds: {{round_1}}, {{round_2}}, and {{round_3}} were chosen for payment.</p>
+<p>Thus, you earn {{tot_payoffs}} in total.</p>
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Confirm</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G3/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

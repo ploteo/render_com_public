@@ -1,0 +1,19 @@
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+<div class="container box">
+
+<p>All your available investment has been allocated based on your choices and the market behavior for each industry.</p>
+<p>Given these elements your final payout is {{tot_payoffs}} </p>
+
+
+</div>
+    {{ next_button }}
+{{ endblock }}
+
+
+{{ block styles }}
+<link href="{{ static 'G5/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

@@ -1,0 +1,120 @@
+{{ block title }}
+Stage {{ player.stage}}: Round {{ round }}
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+    <!-- STAGE 1 -->
+{{ if player.stage == 1 }}
+
+<p>Your country wants to promote the development of a digital education system throughout the compulsory education years.</p>
+<p>It has been found that digital skills and computer literacy help students learn and are essential in their future
+development.</p>
+<p>Please keep in mind that 5% of your contribution will be given to the <b>Children Heritage Foundation</b> for their Digital
+Literacy Program. </p>
+<p><a href="http://childrenheritage.org/campaigns-and-events-digital-literacy.html" target="_blank">In order to continue
+    with the task, please visit
+    the website by clicking here and read about the charity.</a></p> 
+
+
+{{ if player.treatment == "treatm" }}    
+
+{{ if round > 2  }}
+
+<p>After a series of economic evaluations your country found out that in order to implement the policy they will need an
+overall contribution of {{ target }} tokens.</p>
+
+{{ endif }}
+
+{{ endif }}
+
+{{ endif }}
+
+<!-- END STAGE 1-->
+
+    <!-- STAGE 2 -->
+{{ if player.stage == 2 }}
+
+<p>Your country wants to promote the development of a digital education system throughout the compulsory education
+    years.</p>
+<p>It has been found that digital skills and computer literacy help students learn and are essential in their future
+    development.</p>
+<p>Please keep in mind that 5% of your contribution will be given to the <b>The Nature Conservancy</b>. </p>
+<p><a href="https://www.nature.org/en-us/" target="_blank">In order to continue
+        with the task, please visit
+        the website by clicking here and read about the charity.</a></p>
+
+
+{{ if player.treatment == "treatm" }}
+
+{{ if round > 2 }}
+
+<p>After a series of economic evaluations your country found out that in order to implement the policy they will need an
+    overall contribution of {{ target }} tokens.</p>
+
+{{ endif }}
+
+{{ endif }}
+
+{{ endif }}
+
+<!-- END STAGE 2-->
+
+    <!-- STAGE 3 -->
+
+{{ if player.stage == 3 }}
+
+<p>Your country wants to promote the development of a digital education system throughout the compulsory education
+    years.</p>
+<p>It has been found that digital skills and computer literacy help students learn and are essential in their future
+    development.</p>
+<p>Please keep in mind that 5% of your contribution will be given to the <b>Pediatric Cancer Research Alliance</b>. </p>
+<p><a href="https://www.allianceforchildhoodcancer.org" target="_blank">In order to continue
+        with the task, please visit
+        the website by clicking here and read about the charity.</a></p>
+
+
+{{ if player.treatment == "treatm" }}
+
+{{ if round > 2 }}
+
+<p>After a series of economic evaluations your country found out that in order to implement the policy they will need an
+    overall contribution of {{ target }} tokens.</p>
+
+{{ endif }}
+
+{{ endif }}
+
+{{ endif }}
+
+
+
+{{ formfield player.contribution label="How much are you willing to contribute? (A value between 0 and 100)"}}
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G6/mystyle.css' }}" rel="stylesheet">
+
+<style>
+    input[type=radio] {
+        transform: scale(1.3);
+        margin: 12px -10px 0px -30px;
+    }
+</style>
+{{ endblock }}
+

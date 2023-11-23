@@ -1,0 +1,91 @@
+{{ block title }}
+    Round {{ player.round_number }}
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+{{ if player.type == 'A' }}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Cost</th>
+            <th>Utility</th>
+            <th>Emissions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car</td>
+            <td>{{ C.CAR_COST }}</td>
+            <td>{{ car_utility }}</td>
+            <td>{{ C.CAR_EMISSIONS }}</td>
+        </tr>
+        <tr>
+            <td>Bus</td>
+            <td>{{ C.BUS_COST }}</td>
+            <td>{{ bus_utility }}</td>
+            <td> {{ C.BUS_EMISSIONS }}</td>
+        </tr>
+        <tr>
+            <td>Bike</td>
+            <td>{{ C.BIKE_COST }}</td>
+            <td>{{ bike_utility }} </td>
+            <td>{{ C.BIKE_EMISSIONS }} </td>
+        </tr>
+    </tbody>
+</table>
+
+{{ else }}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Cost</th>
+            <th>Utility</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car</td>
+            <td>{{ C.CAR_COST }}</td>
+            <td>{{ car_utility }}</td>
+        </tr>
+        <tr>
+            <td>Bus</td>
+            <td>{{ C.BUS_COST }}</td>
+            <td>{{ bus_utility }}</td>
+        </tr>
+        <tr>
+            <td>Bike</td>
+            <td>{{ C.BIKE_COST }}</td>
+            <td>{{ bike_utility }} </td>
+        </tr>
+    </tbody>
+</table>
+
+{{ endif }}
+
+{{ formfield player.choice }}
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

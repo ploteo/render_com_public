@@ -1,0 +1,37 @@
+{{ block title }}
+    
+{{ endblock }}
+{{ block content }}
+
+
+<div class="container box">
+
+<p> Please read carefully</p>
+
+<div class="row align-items-center">
+    <div class="col-md-12">
+    <img src="{{ static image_path }}" width="100%"/>
+    </div>
+</div>
+<br>
+<p>{{ question }}</p>
+{{ formfield player.check label=""}}
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+
+<link href="{{ static 'G5/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

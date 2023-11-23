@@ -1,0 +1,80 @@
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+
+<p>Your payoff from Round {{player.round_number}} is {{ player.payoff }}.</p>
+
+<p>You chose {{player.choice}} as a transportation mean</p>
+
+<p> These were the choices in your group</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Members choosing it</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Car</td>
+            <td>{{n_car}}</td>
+        </tr>
+        <tr>
+            <td>Bus</td>
+            <td>{{n_bus}}</td>
+        </tr>
+        <tr>
+            <td>Bike</td>
+            <td>{{n_bike}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{{ if player.type == 'A' }}
+
+<p>The total emissions from your apartment in the last round were {{total_emissions}}.</p>
+
+
+
+{{ if threshold_break == True }}
+
+<p>Unfortunately, the emissions threshold of 13 was exceeded in the last round. As a
+result, a negative externality occurred, impacting the utility and payoffs of all members of your group.</p>
+
+{{ else }}
+
+<p>Fortunately, the total emissions did not go over the threshold of 13 in the last round, and no negative externality
+occurred.</p>
+
+{{ endif }}
+
+{{ endif }}
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+

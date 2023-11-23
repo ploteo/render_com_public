@@ -1,0 +1,74 @@
+{{ block title }}
+    Welcome
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+    <h2>Initial instructions</h2>
+<p>You are now taking part to in economic experiment designed by Group 3, in which you will be required to take a series of individual decisions concerning investments. The experiment is divided in three phases composed by three rounds</p>
+
+<p>These instructions are solely for your private information. You are not allowed to communicate with other subjects. If you have any question, please ask us. </p>
+
+<p>During this experiment payments will be expressed in the form of an experimental currency, the tokens.Your income will therefore be first computed in tokens and then converted in euros according to the following equation:</p>
+
+<p><b>1 token = 0.35 euros</b></p> 
+
+<p>After each rround of the game, you will be informed about the number of tokens that you have earned. Nonetheless, your outcome of each phase is computed according to your performance in a  randomly chosen round out of three. </p>
+Your final earning will be the sum of the outcomes obtained in each of the three phases.</p>
+
+<p><b>Final earning = Outcome first phase + Outcome second phase + Outcome third phase</b></p>
+
+<h2>The decision situation</h2>
+
+<p>You will be assigned an initial endowment of 100 tokens at the beginning of each round, of which you
+will be required to invest an arbitrary share x in solely one of three different options. Investment is
+compulsory (which means that your invested amount of tokens must be > 0), although the amount
+of tokens can be chosen freely in each round of the different phases. The residual part of the initial
+endowment, which is the amount that you decide not to invest, will be part of your earnings in that
+round. The investment options are the following</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A</td>
+            <td>75% chance of gaining 2x and 25% chance gaining x</td>
+ 
+
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>50% chance of gaining 4x and 50% chance of losing half the investment x</td>
+
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>25% chance of gaining 10x and 75% chance of losing your investment x</td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">I am ready</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G2/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

@@ -1,0 +1,237 @@
+{{ block title }}
+    {{ if player.stage == 2 }}
+       Stage 2 
+    {{ else }}
+        Stage 3
+    {{ endif }}
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+
+<!--- STAGE 2 -->
+
+{{ if player.stage == 2 }}
+
+<!----- ROUND 1 -->
+
+{{ if player.round_number == 1 }}
+
+<p>In Task 1 the Financial Advisor has to choose between two options.
+The clients will know which option the Financial Advisor chose.</p>
+
+<p>Please select which strategy you prefer.</p>
+
+<p>Take into account that your client can’t choose to rejects your offer.</p>
+
+<p>Remember that your client is {{ if client_risk_profile == "risk seeker" }} <i>risk loving</i> {{ else }} <i>risk averse</i>{{endif}}.</p>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Your choice</th>
+            <th>Offered Product</th>
+            <th>Financial Advisor's Fee</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault1" value="HighRisk"></td>
+            <td>5/10 of ECU 1500; 5/10 of ECU 500</td>
+            <td>5% management fee + 10% performance fee</td>
+  
+        </tr>
+        <tr><td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault2" value="LowRisk"></td>
+            <td>7/10 of ECU 1100; 3/10 of ECU 900</td>
+            <td>5% management fee + 10% performance fee</td>
+        </tr>
+    </tbody>
+    {{ formfield_errors 'investment_profile' }}
+</table>
+
+<p><b>Management fee:</b> percentage of commission on the invested amount.</p> 
+<p><b>Performance fee:</b> percentage of commission on the positive performance of the investment</p> 
+
+{{ endif }}
+
+<!--- ROUND 2 -->
+
+{{ if player.round_number == 2 }}
+
+<p>In Task 2 the Financial Advisor has to choose between two options.</p>
+<p>The client will be able to accept or reject the financial advisor offer.</p>
+<p>Please select which strategy you prefer.</p>
+<p>Take into account that your client can now choose to reject or accept your offer,</p>
+
+
+<p>Remember that your client is {{ if client_risk_profile == "risk seeker" }} <i>risk loving</i> {{ else }} <i>risk averse</i>{{endif}}.</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Your choice</th>
+            <th>Offered Product</th>
+            <th>Financial Advisor's Fee</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault1"
+                    value="HighRisk"></td>
+            <td>5/10 of ECU 1500; 5/10 of ECU 500</td>
+            <td>5% management fee + 10% performance fee</td>
+
+        </tr>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault2"
+                    value="LowRisk"></td>
+            <td>7/10 of ECU 1100; 3/10 of ECU 900</td>
+            <td>5% management fee + 10% performance fee</td>
+        </tr>
+    </tbody>
+    {{ formfield_errors 'investment_profile' }}
+</table>
+
+<p><b>Management fee:</b> percentage of commission on the invested amount.</p>
+<p><b>Performance fee:</b> percentage of commission on the positive performance of the investment</p>
+
+
+{{ endif }}
+
+{{ endif }}
+
+<!-- END STAGE 2-->
+
+<!-- STAGE 3 -->
+
+{{ if player.stage == 3 }}
+
+<!----- ROUND 3 -->
+
+{{ if player.round_number == 3 }}
+
+<p>In Task 1 the Financial Advisor has to choose between three options.</p>
+<p>The clients will know which option the Financial Advisor chose.</p>
+<p>Please select which strategy you prefer.</p>
+<p>Take into account that your client can’t choose to rejects your offer.</p>
+
+<p>Remember that your client is {{ if client_risk_profile == "risk seeker" }} <i>risk loving</i> {{ else }} <i>risk averse</i>{{endif}}.</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Your choice</th>
+            <th>Offered Product</th>
+            <th>Financial Advisor's Fee</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault1"
+                    value="HighRisk"></td>
+            <td>5/10 of ECU 1500; 5/10 of ECU 500</td>
+            <td>5% management fee + 10% performance fee</td>
+
+        </tr>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault2"
+                    value="LowRisk"></td>
+            <td>7/10 of ECU 1100; 3/10 of ECU 900</td>
+            <td>5% management fee + 10% performance fee</td>
+        </tr>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault3" value="BestFitting">
+            </td>
+            <td>Best fitting lottery for the client</td>
+            <td>7.5% fixed fee</td>
+        </tr>
+    </tbody>
+    {{ formfield_errors 'investment_profile' }}
+</table>
+
+<p><b>Management fee:</b> percentage of commission on the invested amount.</p>
+<p><b>Performance fee:</b> percentage of commission on the positive performance of the investment</p>
+<p><b>Fixed fee:</b> fixed and total amount of commission on the invested amount</p>
+
+{{ endif}}
+
+<!--- ROUND 4 -->
+
+{{ if player.round_number == 4 }}
+
+<p>In Task 2 the Financial Advisor has to choose between three options.</p>
+<p>The clients will know which option the Financial Advisor chose.</p>
+<p>Please select which strategy you prefer.</p>
+<p>Take into account that your client can now choose to reject or accept your offer.</p>
+
+<p>Remember that your client is {{ if client_risk_profile == "risk seeker" }} <i>risk loving</i> {{ else }} <i>risk averse</i>{{endif}}.</p>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Your choice</th>
+            <th>Offered Product</th>
+            <th>Financial Advisor's Fee</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault1"
+                    value="HighRisk"></td>
+            <td>5/10 of ECU 1500; 5/10 of ECU 500</td>
+            <td>5% management fee + 10% performance fee</td>
+
+        </tr>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault2"
+                    value="LowRisk"></td>
+            <td>7/10 of ECU 1100; 3/10 of ECU 900</td>
+            <td>5% management fee + 10% performance fee</td>
+        </tr>
+        <tr>
+            <td><input class="form-check-input" type="radio" name="investment_profile" id="flexRadioDefault3"
+                    value="BestFitting">
+            </td>
+            <td>Best fitting lottery for the client</td>
+            <td>7.5% fixed fee</td>
+        </tr>
+    </tbody>
+    {{ formfield_errors 'investment_profile' }}
+</table>
+
+<p><b>Management fee:</b> percentage of commission on the invested amount.</p>
+<p><b>Performance fee:</b> percentage of commission on the positive performance of the investment</p>
+<p><b>Fixed fee:</b> fixed and total amount of commission on the invested amount</p>
+
+
+{{ endif}}
+
+{{ endif }}
+
+<!-- END STAGE 3-->
+
+<i>When done, please click on the button “Continue”.</i>
+
+
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">Continue</span>
+        </button>
+    </div>
+</div>
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G4/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}

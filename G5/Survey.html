@@ -1,0 +1,47 @@
+{{ block title }}
+    Your opinion
+{{ endblock }}
+
+{{ block content }}
+
+<div class="container box">
+
+<h3>How risky do you perceive the current investment climate in the real estate industry?</h3>
+
+    {{ formfield player.survey_1 label=""}}
+
+<br>
+<hr>
+<h3>How risky do you perceive the potential investment in the biotech industry?</h3>
+
+    {{ formfield player.survey_2 label=""}}
+
+<br>
+<hr>
+<h3>How risky do you perceive the current investment climate in the consumer technology industry?</h3>
+
+{{ formfield player.survey_3 label=""}}
+
+<br>
+<hr>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">End</span>
+        </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'G5/mystyle.css' }}" rel="stylesheet">
+{{ endblock }}
+
+
+
