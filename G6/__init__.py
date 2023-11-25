@@ -38,12 +38,27 @@ def creating_session(subsession: Subsession):
         else:
             p.treatment="ctrl"
 
-        if p.round_number < 6:
-            p.stage=1
+        if p.round_number < 6:#randomize the order of the stages
+            if p.group.id_in_subsession % 3 == 1:
+                p.stage=1
+            elif p.group.id_in_subsession % 3 == 2:
+                p.stage=2
+            else:
+                p.stage=3
         elif p.round_number < 11:
-            p.stage=2
+            if p.group.id_in_subsession % 3 == 1:
+                p.stage=2
+            elif p.group.id_in_subsession % 3 == 2:
+                p.stage=3
+            else:
+                p.stage=1
         else:
-            p.stage=3
+            if p.group.id_in_subsession % 3 == 1:
+                p.stage=3
+            elif p.group.id_in_subsession % 3 == 2:
+                p.stage=1
+            else:
+                p.stage=2
 
 
 class Group(BaseGroup):
@@ -58,7 +73,7 @@ def set_payoffs(group: Group):
                 p.participant.vars['group_contributions'].append(other.contribution) #then the others
         p.payoff=C.ENDOWMENT-p.contribution+(sum(p.participant.vars['group_contributions'])* C.ALPHA)
         average = round(sum(p.participant.vars['group_contributions'])/C.PLAYERS_PER_GROUP,2) 
-        p.target = round(average*.25,2)
+        p.target = round(average*1.25,2)
     group.donation = sum(p.participant.vars['group_contributions'])*.05
 
 class Player(BasePlayer):
@@ -109,8 +124,6 @@ class Contribution(Page):
     @staticmethod
     def vars_for_template(player: Player):
     
-
-
         # reframe the rounds
         if player.round_number <6 :
             round=player.round_number
