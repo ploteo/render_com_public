@@ -9,8 +9,10 @@ Contributions (Stage {{ player.stage}}: Round {{ round }})
 <p>in bold your contribution.</p>
 {{ table }}
 
-{{ if round == 5}}
+
 <p>This is your payoff:  {{player.payoff}} </p>
+
+{{ if round == 5}}
 
 <p>This is the overall donation given to {{ if player.stage == 1 }}The Children Heritage Foundation{{endif}} {{ if player.stage == 2 }}The Nature Conservancy{{endif}} {{ if player.stage == 3 }}The Pediatric Cancer Research Alliance{{endif}}: {{ donation}} points.</p>
 

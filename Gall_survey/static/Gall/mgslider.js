@@ -36,8 +36,8 @@ function mgslider(field, min, max, step) {
     this.digits = this.suggest_digits(step);
 
     this.prefix = "mgslider_yF5sTZLy";
-    this.yourvalue = "You decided to invest";
-    this.yourvalueTwo = " points";
+    this.yourvalue = "You decided to donate";
+    this.yourvalueTwo = " GBP";
 
     mgsliders.push({field: field, obj: this});
 }

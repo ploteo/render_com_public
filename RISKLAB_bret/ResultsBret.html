@@ -1,0 +1,81 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+
+<div class="container bordi">
+<div class="row">
+    <div class="col-sm-1">&nbsp;</div>
+    <div class="col-sm-10">
+      <table class="table">
+        <tr>
+            <th>Boxes collected</th>
+            <th>Bomb</th>
+        </tr>
+        <tr>
+            <td>{{ boxes_collected }}</td>
+            <td>
+                {% if bomb == 1 %}
+                    <span class="iconify" data-icon="noto:bomb" data-width="128"></span><span class="iconify"
+                      data-icon="clarity:sad-face-line" data-width="128"></span>
+
+
+                {% elif bomb == 0 %}
+                    <span class="iconify" data-icon="mdi:bomb-off" data-width="128"></span> <span class="iconify"
+                      data-icon="clarity:happy-face-line" data-width="128"></span>
+
+                {% endif %}
+            </td>
+
+        </tr>
+        <tr>
+            <td>Your earnings: {{ round_result }}</td>
+            <td>
+              &nbsp;
+            </td>
+
+        </tr>
+    </table>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button type="button" id = "button_prosegui" class="btn btn-outline-primary btn-lg">CONTINUE</button>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block styles %}
+	<link href="{% static "bret/mystyle.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block scripts %}
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+
+  <script>
+
+    jQuery(document).ready(function ($) {
+
+      $( "#button_prosegui" ).click(function() {
+  			$("form").submit();
+  		});
+
+    });
+
+
+
+  </script>
+
+
+
+{% endblock %}

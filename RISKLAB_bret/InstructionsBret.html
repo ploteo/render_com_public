@@ -1,0 +1,81 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    <h1>
+      <font size=6> Instructions</font>
+    </h1>
+
+<div class="container box">
+
+        <p>
+      
+      Below you will see a matrix containing 32 boxes on the screen. Of these 32 boxes, 31 contain 1 UMS each and 1
+      box contains a bomb.
+      You don't know where the bomb is located. You know that the bomb can be placed with the same probability in every
+      box.</p>
+
+      <p>IYour task is to indicate the number of boxes you want to collect. For each box you collect you earn 1 UMS. If
+        you don't collect the bomb, your profit will be equal
+        to the collected boxes. If you pick up the box where the bomb is placed, it will explode and your profit will be
+        nil.</p>
+
+      <p>Once you have selected the number of boxes you want to collect, press the 'Stop' button and then the 'Continue'
+        button. You will find out if you have collected the bomb only at the end of the experiment
+        after selecting the number of boxes you want to collect.</p>
+
+      <p>At the end of the experiment, the total amount of UMS you earned in this part will be converted into Euro at
+        the following exchange rate:</p>
+
+      <p>1 UMS = {{Constants.exchange_rate}} Euro</p>
+
+
+      </div>
+
+    </div>
+
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button type="button" id = "button_prosegui" class="btn btn-outline-primary btn-lg">CONTINUE</button>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block styles %}
+	<link href="{% static "tam_bret/mystyle.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block scripts %}
+
+  <script>
+
+    jQuery(document).ready(function ($) {
+
+      $( "#button_prosegui" ).click(function() {
+  			$("form").submit();
+  		});
+
+    });
+
+
+
+  </script>
+
+
+
+{% endblock %}
+
+{{ block styles }}
+
+<link href="{{ static 'bret/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

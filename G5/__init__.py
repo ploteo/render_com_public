@@ -66,10 +66,7 @@ class Player(BasePlayer):
         choices=["True","False"],
         widget=widgets.RadioSelect
     )
-    investment = models.CurrencyField(
-        min=0, max=100,
-        doc="""Amount invested by the player""",
-    )
+    investment = models.CurrencyField(choices=[0,20,40,60,80,100], widget=widgets.RadioSelectHorizontal)   
     investment_type = models.CharField()
     survey_1  = models.CharField(choices=["Not at all risky","A little risky","Moderately risky","Very risky","Extremely risky"], widget=widgets.RadioSelectHorizontal)
     survey_2  = models.CharField(choices=["Not at all risky","A little risky","Moderately risky","Very risky","Extremely risky"], widget=widgets.RadioSelectHorizontal)        
@@ -140,13 +137,14 @@ class Investment(Page):
  
 class Investment_outcome(Page): 
 
+                      
     def vars_for_template(player):
         random_number = random.randint(1,100)
 
         if player.investment_type == "LL":
             if random_number <= 60:
                 win = True
-                player.payoff = player.investment * (3) + (100- player.investment)*1.04
+                player.payoff = player.investment * (2) + (100- player.investment)*1.04
             else:
                 win = False
                 player.payoff = player.investment * (0) + (100- player.investment)*1.04
@@ -154,7 +152,7 @@ class Investment_outcome(Page):
         if player.investment_type == "MM":
             if random_number <= 50:
                 win = True
-                player.payoff = player.investment * (3) + (100- player.investment)*1.04
+                player.payoff = player.investment * (2) + (100- player.investment)*1.04
             else:
                 win = False
                 player.payoff = player.investment * (0) + (100- player.investment)*1.04
@@ -162,9 +160,9 @@ class Investment_outcome(Page):
         if player.investment_type == "HH":
             if random_number <= 40:
                 win = True
-                player.payoff = player.investment * (9) + (100- player.investment)*1.04
+                player.payoff = player.investment * (8) + (100- player.investment)*1.04
             else:
-                player.payoff = player.investment * (0) + (100- player.investment)*1.04
+                player.payoff = player.investment * (8) + (100- player.investment)*1.04
                 win = False
         return {
             'win': win

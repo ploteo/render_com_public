@@ -1,0 +1,69 @@
+{{ block title }}
+    About you
+{{ endblock }}
+{{ block content }}
+
+<div class="container box">
+
+<h3>Age</h3>
+
+{{ formfield player.age label="" }}
+
+<h3>Gender</h3>
+
+{{ formfield player.gender label="" }}
+
+
+<h3>Is English your native language?</h3>
+
+{{ formfield player.english label="" }}
+
+<h3>Do you have any personal investment experience?</h3>
+
+{{ formfield player.investment label="" }}
+
+<h3>Do you follow any professional, financial, or industrial news sources?</h3>
+
+{{ formfield player.news label="" }}
+
+<h3>Do you often refer to news stories and social media to make investment decisions?</h3>
+
+{{ formfield player.social label="" }}
+
+<h3>Please indicate the highest educational attainment of your father:</h3>
+
+{{ formfield player.father label="" }}
+
+<h3>Please indicate the highest educational attainment of your mother:</h3>
+
+{{ formfield player.mother label="" }}
+
+<h3>What type of area did you mostly live in since you were young?</h3>
+
+{{ formfield player.area label="" }}
+
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+        <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+            <span style="font-size:14pt">OK</span>
+        </button>
+    </div>
+</div>
+
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static 'Gall/mystyle.css' }}" rel="stylesheet">
+
+<style>
+    input[type=radio] {
+        transform: scale(1.3);
+    }
+</style>
+{{ endblock }}

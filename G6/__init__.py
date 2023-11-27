@@ -12,6 +12,8 @@ partner matching
 ! changed alpha to .5
 ! do not understadn the policy implementation
 ! I do not understand the payoff
+
+I wil not implement the punishment after the target is not reached (tto much of achange)
 """
 
 
@@ -134,14 +136,17 @@ class Contribution(Page):
         if round > 2:
             #retrieve the target
             target = player.in_round(player.round_number-1).target 
+
             return {"treatment":player.treatment,
                     "stage":player.stage,
                     "round":round,
-                    "target": target}
+                    "target": target
+                    }
         else:
             return {"treatment":player.treatment,
                     "stage":player.stage,
-                    "round":round}
+                    "round":round
+                    }
 
 
 class Survey(Page):

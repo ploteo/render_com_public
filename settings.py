@@ -31,6 +31,12 @@ SESSION_CONFIGS = [
         app_sequence=['G6'],
         num_demo_participants=8,
     ),
+    dict(
+        name='Gall',#
+        app_sequence=['RISKLAB_bret','Gall_survey'],
+        num_demo_participants=6,
+    ),
+
 ]
 
 

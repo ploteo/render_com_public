@@ -1,0 +1,38 @@
+.my-fixed-col{
+    width: 15px;
+    height: 15px;
+    border-color: black;
+    border-radius: 0%;
+    cursor: cell;
+  }
+  
+  
+.target_zone_cell {
+  cursor: none;
+}
+
+
+.border-1{ 
+  border-width:1px 1px 1px 1px!important; 
+  border-style:solid dotted dotted solid; 
+  border-color:hsl(0, 0%, 0%)hsl(60, 2%, 30%) hsl(60, 2%, 30%)  hsl(0, 0%, 0%); 
+}
+
+.border-2{ 
+  border-width:1px 1px 1px 1px!important; 
+  border-style:solid solid dotted dotted; 
+  border-color:hsl(0, 0%, 0%) hsl(0, 0%, 0%) hsl(60, 2%, 30%) hsl(60, 2%, 30%) ; 
+}
+
+.border-3{ 
+  border-width:1px 1px 1px 1px!important; 
+  border-style:dotted dotted solid solid; 
+  border-color:hsl(60, 2%, 30%) hsl(60, 2%, 30%) hsl(0, 0%, 0%) hsl(0, 0%, 0%);
+}
+
+.border-4{ 
+  border-width:1px 1px 1px 1px!important; 
+  border-style:dotted solid solid dotted; 
+  border-color:hsl(60, 2%, 30%)  hsl(0, 0%, 0%) hsl(0, 0%, 0%) hsl(60, 2%, 30%);
+}
+
