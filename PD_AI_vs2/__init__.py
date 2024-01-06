@@ -4,18 +4,16 @@ import openai
 
 
 doc = """
-a simple PD with assistance from AI. In one case the machine is instanced on "selfish" in the other on "cooperative"
-This version allows for repeated rounds nd integrates what the other does
+a simple one-shot PD with assistance from AI. 
 
 The treatments are the following:
 
-TYPE: the AI is instructed to suggest the player to choose A
-    - SELFISH: the AI is instructed to suggest the player to choose A
-    - COOPERATIVE: the AI is instructed to suggest the player to choose B
-MATCHING: 
-    - SAME: both are same type (2 cooperatives or 2 selfish)
-    - DIFF: both are different type
-
+TYPE: 
+    - AWARE: knows about the nature of the AI
+    - UNAWARE: does not know about th enature of the AI
+TREATMENT:
+    - OPPO: the algo is competitive
+    - COOP: the algo is cooperative
 """
 
 class C(BaseConstants):
@@ -86,17 +84,10 @@ def creating_session(subsession: Subsession):
     for g in subsession.get_groups():
         for p in g.get_players():
             p.treatment= subsession.session.config['treatment']
-            if p.treatment == "SAME":
-                if p.group.id_in_subsession % 2 == 1:
-                    p.type="SELFISH"
-                else:
-                    p.type="COOPERATIVE"
+            if p.id_in_group % 2 == 1:
+                p.type="AWARE"
             else:
-                if p.id_in_group % 2 == 0:
-                    p.type="SELFISH"
-                else:
-                    p.type="COOPERATIVE"
-
+                p.type="UNAWARE"
 
 class Group(BaseGroup):
     pass
@@ -219,26 +210,11 @@ class AskAI(Page):
 
             domanda = data['domanda']
 
-            #--------------
-            #RETRIEVE CHOICES FROM PREVIOUS ROUND to FEED THEM TO AI
-            #--------------
-            # if player.round_number > 1: # the id in group is fixed across rounds
-            #     p1 = player.in_round(player.round_number-1).group.get_player_by_id(1)
-            #     p2 = player.in_round(player.round_number-1).group.get_player_by_id(2)
-            #     if player.id_in_group == 1:
-            #         own_choice = p1.choice_A
-            #         other_choice = p2.choice_A
-            #     else:
-            #         own_choice = p2.choice_A
-            #         other_choice = p1.choice_A
-                
-            # #TODO: continue with the feedback to give to the AI
-
             #----------------------------
             # HERE THE PROMPTING TREATMENT
             #----------------------------
             
-            if player.type == "SELFISH":
+            if player.treatment == "OPPO":
                 profile = C.PROFILE[0]
             else:
                 profile = C.PROFILE[1]
@@ -260,6 +236,13 @@ class AskAI(Page):
                 print( "RISPOSTA BAD")
                 
             return{player.id_in_group:dataout}
+        
+    @staticmethod
+    def vars_for_template(player):
+        return {'type': player.type,
+                'treatment': player.treatment
+                }
+
 
     # @staticmethod
     # def is_displayed(player: Player):

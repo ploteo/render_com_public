@@ -59,6 +59,34 @@
 </div>
 </div>
 
+<!-- INFO  -->
+
+{{ if type == "AWARE" }}
+
+<div class="alert alert-primary" role="alert">
+  
+{{ if treatment == "OPPO" }}
+
+<p>The AI is instructed to suggest you to choose <i>action B.</i>
+
+{{ else }}
+
+<p>The AI is instructed to suggest you to choose <i>action A.</i>
+
+{{ endif }}
+
+Your AI chatbot and that of the Other have access to the same information. However, the other is not informed about the
+  instructions given to the AI.</p></div>
+
+{{ else }}
+
+<div class="alert alert-primary" role="alert"><p>Your AI chatbot and that of the Other have access to the same information.</p></div>
+
+{{ endif }}
+
+
+<!-- INFO -->
+
 <h2>Ask a question to the AI about the game</h2>
 
 <div class="row">
