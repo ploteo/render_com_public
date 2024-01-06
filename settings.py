@@ -6,7 +6,7 @@ SESSION_CONFIGS = [
             app_sequence=['PD_AI_vs2'], 
             num_demo_participants= 4,
             treatment = "SAME" #DIFF (one coop and one self) or SAME (or both coop or both self)
-    ),
+    )
     # dict(
     #      name='G1',#Loss/Gain Frame
     #      app_sequence=['G1'],
