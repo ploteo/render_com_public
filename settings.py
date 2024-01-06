@@ -2,10 +2,16 @@ from os import environ
 
 SESSION_CONFIGS = [
             dict(
-            name='PD_AI_vs2',
+            name='PD_AI_COOP',
             app_sequence=['PD_AI_vs2'], 
-            num_demo_participants= 4,
-            treatment = "SAME" #DIFF (one coop and one self) or SAME (or both coop or both self)
+            num_demo_participants= 2,
+            treatment = "COOP" 
+    ),
+                dict(
+            name='PD_AI_OPPO',
+            app_sequence=['PD_AI_vs2'], 
+            num_demo_participants= 2,
+            treatment = "OPPO" 
     )
     # dict(
     #      name='G1',#Loss/Gain Frame
