@@ -1,0 +1,69 @@
+{{ block title }}
+  Please answer the following questions
+{{ endblock }}
+
+{{ block content }}
+
+<div class="box-container">
+    <div class="box">
+        <div class="box-face box-front">
+
+<h3>Do you use Generative AI useful tools (ChatGPT, Bard, DALL-E, ...)?</h3>
+<p>Please indicate your response on a scale from 1 to 5, where 1 means “Never” and 5 means “Frequently”.</p>
+<center>
+  {{ formfield player.input_radio_useful label=""}}
+</center>
+
+<br>
+<hr>
+
+<h3>Was the interaction with the Generative AI useful?</h3> 
+<p>Please indicate your response on a scale from 1 to 5, where 1 means “Very useless” and 5 means “Very useful”.</p>
+  <center>
+    {{ formfield player.input_radio_useful label=""}}
+  </center>
+
+<br>
+<hr>
+
+<h3>Did the interaction with the Generative AI affect your choice?</h3>
+<p>Please indicate your response on a scale from 1 to 5, where 1 means “Not at all” and 5 means “Very much”.</p>
+  <center>
+    {{ formfield player.input_radio_follow label=""}}
+  </center>
+
+<br>
+<hr>
+
+</div>
+</div>
+
+<br>
+
+<div class="row justify-content-end">
+    <div class="col-md-2">
+      <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+        <span style="font-size:14pt">Continue</span>
+      </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+
+<!-- <style>
+  .box {
+    border-style: solid;
+    border-color: #0275d8;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  }
+</style> -->
+
+<link href="{{ static 'PD_AI/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

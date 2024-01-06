@@ -1,0 +1,67 @@
+{{ extends "global/Page.html" }}
+{{ load staticfiles otree }}
+{{ load otree i18n }}
+
+
+
+{{ block content }}
+<h1> Final Questionnaire</h1>
+<div class="container box">
+  <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-8">
+      <h3> Gender </h3>
+        {{ formfield player.sex  }}
+      <h3> Age </h3>
+    		{{ formfield player.age  }}
+
+<h3> Comments, if any </h3>
+        <textarea id="id_comment" name="comment" rows="4" cols="50">
+        </textarea>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    </div>
+
+    <div class="row"> <br>
+    <div class="col-sm-5">&nbsp;</div>
+    <div class="col-sm-4">
+      <button type="button" id = "button_prosegui" class="btn btn-outline-primary btn-lg">END</button>
+    </div>
+  </div>
+
+
+
+{{ endblock }}
+
+
+
+{{ block scripts }}
+
+  <script>
+
+    jQuery(document).ready(function ($) {
+
+      $( "#button_prosegui" ).click(function() {
+  			$("form").submit();
+  		});
+
+    });
+
+
+
+  </script>
+
+
+
+{{ endblock }}
+
+{{ block styles }}
+
+<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+
+
+{{ endblock }}

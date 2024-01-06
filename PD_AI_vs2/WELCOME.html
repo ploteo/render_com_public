@@ -1,0 +1,43 @@
+{{ extends "global/Page.html" }}
+{{ load otree static }}
+
+
+
+{{ block content }}
+<h1>Welcome {{label}}</h1>
+
+<div class="alert alert-info" role="alert">
+
+<!-- <p>Please remain seated and do not talk to other participants during the experiment.</p> -->
+<p>Please do not use your phone or any other electronic device during the study.</p>
+<p>Please do not use the browser's back button during the study.</p>
+<p>Please do not close the browser during the study.</p>
+<!-- <p>If you need to ask a question, please raise your hand and wait for the experimenter to come to you.</p> -->
+<p> Soon you will receive detailed instructions directly on the screen </p>
+
+</div>
+<!-- end container -->
+
+
+
+  <div class="row">
+    <div class="col-md-12 text-end">
+      <button class="btn btn-primary">OK, continue</button>
+    </div>
+  </div>
+
+{{ endblock }}
+
+{{ block styles }}
+	<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+
+
+{{ endblock }}
+
+
+
+{{ block scripts }}
+
+
+{{ endblock }}

@@ -1,0 +1,285 @@
+{{ extends "global/Page.html" }}
+{{ load otree static }}
+
+
+
+{{ block content }}
+<input type="hidden" name="belief" id="id_belief">
+
+<h2>Your beliefs</h2>
+
+<div class="container box">
+<div class="row">
+  <div class="col-md-4 text-start">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td scope="col" colspan="2"><i></i></td>
+          <th scope="col" colspan="2">Col (Other)</th>
+        </tr>
+      </thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+      </tr>
+      <tbody>
+        <tr>
+          <th scope="row" rowspan="2">Row (You)</th>
+          <th scope="row">A</th>
+          <td>7, 7</td>
+          <td>2, 9</td>
+        </tr>
+        <tr>
+          <th scope="row">B</th>
+          <td>9, 2</td>
+          <td>4, 4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-8 text-start">
+    <p>In the interaction, you just chose {{player.choice}}.</p>
+
+    <p>In you best assessment, how likely is that the other chooses A?</p>
+
+    <p>Click on the slider below and move the pointer to the desired probability</p>
+  </div>
+
+</div>
+
+<!--------- SLIDER -->
+
+{{ formfield_errors 'belief' }}
+<div class="row">
+  <div class="col-md-12"><input type="range" id="id_bel" min="0" max="100" step="1" style="flex-grow: 100"
+      class='not-clicked'></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-8"">
+    <p>I believe that the probability that the Other chooses <span style=" font-weight: bold;"> A </span> is <span id="value_belief" style="font-size: 100%; font-weight: bold; color: blue" class="text"></span></p>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm">
+    <p>If the other <span style="font-weight: bold;">actually chooses A</span>, the likelihood of earning
+      {{C.EARN_BEL}} is <span id="PW_true" style="font-size: 100%;font-weight: bold;color: blue"></span>%</p>
+  </div>
+  <!-- <p>The probability of losing {{C.LOSS_BEL}} is <span id="PL_true" style="font-size: 100%;font-weight: bold;"></span>%
+  </p> -->
+</div>
+
+
+<div class="row">
+  <div class="col-sm">
+    <p>If the other <span style="font-weight: bold;">actually chooses B</span>, the likelihood of earning
+      {{C.EARN_BEL}} is <span id="PW_false" style="font-size: 100%;font-weight: bold;color: blue"></span>%</p>
+  </div>
+  <!-- <p>The probability of losing {{C.LOSS_BEL}} is <span id="PL_false" 
+        style="font-size: 100%;font-weight: bold;"></span>%</p> -->
+</div>
+<!-- end of sliders -->
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-10 text-end">
+    <button id="btn_submit" class="btn btn-outline-primary btn-lg">OK, confirm my choice</button>
+  </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+
+<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+<style>
+  .blink_text {
+
+    animation: 1s blinker linear infinite;
+    -webkit-animation: 1s blinker linear infinite;
+    -moz-animation: 1s blinker linear infinite;
+
+    color: red;
+  }
+
+  @-moz-keyframes blinker {
+    0% {
+      opacity: 1.0;
+    }
+
+    50% {
+      opacity: 0.0;
+    }
+
+    100% {
+      opacity: 1.0;
+    }
+  }
+
+  @-webkit-keyframes blinker {
+    0% {
+      opacity: 1.0;
+    }
+
+    50% {
+      opacity: 0.0;
+    }
+
+    100% {
+      opacity: 1.0;
+    }
+  }
+
+  @keyframes blinker {
+    0% {
+      opacity: 1.0;
+    }
+
+    50% {
+      opacity: 0.0;
+    }
+
+    100% {
+      opacity: 1.0;
+    }
+  }
+
+  /*  this is the thuimb to choose */
+
+  .myclass::-webkit-slider-thumb {
+    box-shadow: 3px 3px 3px #000000;
+    border: 1px solid #b6b6b6;
+    height: 30px !important;
+    width:30px !important;
+    border-radius: 100px !important;
+    background: rgb(75, 107, 248) !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    margin-top: -10px !important;
+  }
+
+
+
+  input[type=range] {
+    background: rgb(232, 232, 232) !important;
+    -webkit-appearance: none;
+    border: 2px solid rgb(75, 107, 248) !important;
+    height: 20px;
+    width: 100%;
+    margin-top: 0px !important;
+  }
+
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10.4px;
+  }
+
+
+  /* ========================================== */
+  /* This is needed to make the button appear */
+  /* ========================================== */
+
+  .not-clicked::-webkit-slider-thumb {
+    opacity: 0;
+  }
+
+  .clicked::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -14px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    /* Add cool effects to your sliders! */
+  }
+
+  /* ========================================== */
+  /* ========================================== */
+</style>
+
+{{ endblock }}
+
+
+{{ block scripts }}
+<script src="{{ static 'PD_AI/js/bootstrap-slider.js' }}"></script> 
+
+<script>
+  $('input[type="range"]').on('mousemove touchmove', function () {
+
+    $val = $(this).val();
+    $thumb = $(this).siblings('.thumb');
+
+    $thumb.css('background-position-x', $val + '%');
+  });
+  // -------------------------------------//
+  // not display at first
+  // -------------------------------------//
+  $('.not-clicked').click(function (e) {
+    $(this).removeClass('not-clicked');
+    $(this).addClass('clicked');
+  });
+
+  // -------------------------------------//
+  // -------------------------------------//
+  $(document).ready(function () {
+
+    // -------------------------------------//
+    // -------------------------------------//
+
+
+    // -------------------------------------//
+    $("#value_belief").html("");
+    $("#id_belief").addClass('myclass');
+
+    // -------------------------------------//
+    // -------------------------------------//
+    // evento change dello slider
+
+    $('input[type=range]').on('input change', function () {
+
+      $("#" + this.id).addClass('myclass');
+
+      $("#value_belief").html($("#" + this.id).val() + "%");
+      $("#id_belief").val($("#" + this.id).val());
+
+      perc = $("#id_belief").val() //reported percentage   
+      console.log($("#id_belief").val())
+      //=============================================================
+      PW_true = parseFloat((1 - (1 - perc / 100) ** 2) * 100).toFixed(2)
+      PL_true = parseFloat(((1 - perc / 100) ** 2) * 100).toFixed(2)
+      PW_false = parseFloat((1 - (perc / 100) ** 2) * 100).toFixed(2)
+      PL_false = parseFloat(((perc / 100) ** 2) * 100).toFixed(2)
+      //=============================================================
+      $("#PW_true").html(PW_true);
+      $("#id_PW_true").val(PW_true);
+
+      $("#PL_true").html(PL_true);
+      $("#id_PL_true").val(PL_true);
+
+      $("#PW_false").html(PW_false);
+      $("#id_PW_false").val(PW_false);
+
+      $("#PL_false").html(PL_false);
+      $("#id_PL_false").val(PL_false);
+    });
+  });
+
+
+  // BOTTONE
+
+</script>
+{{ endblock }}

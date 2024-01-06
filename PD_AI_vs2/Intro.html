@@ -1,0 +1,53 @@
+{{ extends "global/Page.html" }}
+{{ load otree static }}
+
+
+
+{{ block content }}
+<h1>Welcome</h1>
+<div class="container box">
+<h2></h2>
+
+<div class="row">
+  <div class="col-md-12 text-start">
+
+<p>You will engage with another individual in a strategic interaction where you must select one of two available actions.
+Your payoff in this interaction depends on the combined choices made by both parties. Further game details will be
+provided on the next screen.</p>
+
+<p>Additionally, you have the option to consult Generative Artificial Intelligence for information regarding this strategic
+interaction. You must ask at least 5 questions to gather relevant information. The AI will provide answers
+to your queries. </p>
+
+<p>
+Once you are prepared to proceed and participate in the game, you can click the "OK, continue" button on the screen's bottom right.
+</p>
+</div>
+</div>
+</div>
+<!-- end container -->
+<br> 
+  <div class="row">
+    <div class="col-md-12 text-end">
+      <button class="btn btn-primary">OK, continue</button>
+    </div>
+  </div>
+
+
+
+
+{{ endblock }}
+
+{{ block styles }}
+	<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+
+
+{{ endblock }}
+
+
+
+{{ block scripts }}
+
+
+{{ endblock }}

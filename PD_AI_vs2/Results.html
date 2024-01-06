@@ -1,0 +1,29 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+<div class="container box">
+
+<ul>
+    <li>
+        You chose {{own_choice}}
+    </li>
+    <li>
+        The other chose {{other_choice}}
+    </li>
+</ul>
+
+Thus, your payoff is {{player.payoff}}
+
+</div>  
+<br>
+
+<div class="row">
+    <div class="col-md-12 text-end">
+        <button class="btn btn-primary">Continue to the survey</button>
+    </div>
+
+{{ endblock }}
+
+{{ block styles }}
+<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+{{ endblock }}

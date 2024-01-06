@@ -1,0 +1,230 @@
+{{ extends "global/Page.html" }}
+{{ load otree static }}
+
+
+
+{{ block content }}
+<h2>The interaction</h2>
+<div class="container box">
+
+<div class="row">
+  <div class="col-md-4 text-start">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <td scope="col" colspan="2"><i></i></td>
+    <th scope="col" colspan="2">Col (Other)</th>
+  </tr>
+</thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">A</th>
+      <th scope="col">B</th>
+    </tr>
+  <tbody>
+    <tr>
+      <th scope="row" rowspan="2">Row (You)</th>
+      <th scope="row">A</th>
+      <td>7, 7</td>
+      <td>2, 9</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>9, 2</td>
+      <td>4, 4</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+<div class="col-md-8 text-start">
+  <p>In the interaction, you are matched with another player and must decide between two actions: <i>A</i> or <i>B</i>. The other must make the same choice. You cannot comunicate with the other and the choice is made simultaneously and independently by you and the other.</p>
+    <p>The table summarizes the possible outcomes of the interaction. You are the <i>Row</i> player and the other is the <i>Col</i> player. The combination of your choice and the other's choice determines the payoff for each of you: in the matrix the number before the comma is your payoff and the number after the comma the other's payoff. </p>
+  </div>
+
+</div>
+<!-- 
+<div class="row">
+  <div class="col-md-12 text-start">
+  <p><i>The payoffs are virtual and will not be paid to you, but we ask to choose as if they were real monetary
+      earnings.</i></p>
+</div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-12 text-start">
+   <p>You have access to an interface to ask questions to AI about the game and how to play it. You can ask as many questions as you like, just type them in the box and click on the <i>Ask</i> button. However, it's important to note that before proceeding to make your choice (A or B) in the game, you are required to ask a <i>minimum of 5 questions.</i> </p>
+   <p>Once you have asked at least 5 questions, you will have the option to select between A and B and confirm your choice by clicking the button that will appear at the bottom right of the screen.</p>
+</div>
+</div>
+
+<h2>Ask a question to the AI about the game</h2>
+
+<div class="row">
+      <div class="col-md-8 text-start">
+     <b>Type your question here:</b> 
+			</div>
+      <div class="col-md-4 text-end">
+              
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 text-start">
+    <input type="text" id="domanda" name="domanda" size="40">
+  </div>
+  <div class="col-md-4">
+    <button type="button" id="btn_quest" class="btn btn-outline-primary"> Ask </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-start">
+      <b>The AI Answer:</b><br>
+        <textarea id="risposta" name="risposta" rows="8" cols="40">
+                  </textarea>
+  </div>
+
+</div>
+
+
+      <!-- <div class="col-md-12 text-center">
+        <button type="button" id = "btn_quest" class="btn btn-outline-primary btn-lg" >Ask</button>
+      </div>
+    </div> -->
+
+
+        <!-- # how many questions they asked -->
+<div class="row" >
+  <div class="col-md-12" id="questions" name="questions"></div>
+</div>
+
+<!-----  CHOICE ------>
+
+<div class="container" id="my_choice">
+<div class="row">
+  <div class="col-md-8 text-start"></div>
+  <div class="col-md-4 text-end">
+  <h2> Your choice</h2>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-8 text-start"></div>
+  <div class="col-md-4">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="choice" id="choice_1" value="A">
+      <label class="form-check-label" for="flexRadioDefault1">
+        A
+      </label>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-8 text-start"></div>
+  <div class="col-md-4 text-start">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="choice" id="choice_0" value="B">
+      <label class="form-check-label" for="flexRadioDefault2">
+        B
+      </label>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{{ formfield_errors 'choice' }}
+
+
+
+<!-- end container -->
+<br>
+<div class="row" >
+
+  <div class="col-md-10 text-end">
+    <button class="btn btn-outline-primary btn-lg" id="btn_next">OK, confirm my choice</button>
+  </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+{{ endblock }}
+
+{{ block styles }}
+	<link href="{{ static "PD_AI/mystyle.css" }}" rel="stylesheet">
+
+
+
+{{ endblock }}
+
+
+
+{{ block scripts }}
+
+
+<script>
+
+let num_message = 0;
+
+//-----------------------------------------------------------------------------
+ // START PAGE
+//-----------------------------------------------------------------------------
+  jQuery(document).ready(function ($) {
+    $("#btn_next").hide();
+    $("#my_choice").hide();
+
+  });
+
+  //-----------------------------------------------------------------------------
+ // BOTTONE INTERROGA
+//-----------------------------------------------------------------------------
+
+  $("#btn_quest").click(function(){ 
+    $("#btn_quest").hide();
+
+
+    num_message++;
+    $("#risposta").val("Question #" + num_message + ": "+ $("#domanda").val() + "\n");
+    document.getElementById("questions").innerHTML = "You asked " + num_message + " questions already"  + "\n\n";
+    liveSend({'comando':1,'domanda': $("#domanda").val()});
+
+  });
+
+
+//-----------------------------------------------------------------------------
+ // RICEZIONE DATI SERVER
+//-----------------------------------------------------------------------------
+
+  function liveRecv(data) {
+    comando = data.comando;
+    if (comando == 1) {       
+      risposta = data.risposta;   
+      num_messages = data.num_message;  
+
+      $("#risposta").val($("#risposta").val()+"AI Answer:"+"\n" + risposta);
+      $("#domanda").val("");
+      $("#btn_quest").show(); 
+  
+      
+      num_message = num_messages;
+    if (num_messages >= 5) {
+      $("#btn_next").show();
+      $("#my_choice").show(); 
+    }      
+
+  }
+
+  if (comando ==2) {
+    $("#risposta").val("I could not answer your question. Please try again.");
+  }
+}
+
+
+
+
+</script>
+
+{{ endblock }}

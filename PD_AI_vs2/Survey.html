@@ -1,0 +1,75 @@
+{{ block title }}
+  Please answer the following questions
+{{ endblock }}
+
+{{ block content }}
+
+<div class="box-container">
+    <div class="box">
+        <div class="box-face box-front">
+
+<h3>In general, how willing or unwilling are you to take risks?</h3> <p>Please indicate your response on a scale from 0 to 10, where 0 means “Completely unwilling to take risks” and 10 means “Very willing to take risks”.</p>
+  <center>
+    {{ formfield player.input_radio_risk label=""}}
+  </center>
+
+<br>
+<hr>
+
+<h3>How willing are you to give up something that is beneficial for you today in order to benefit more from that in the future?</h3> <p>Please indicate your response on a scale from 0 to 10, where 0 means “Completely unwilling to give up something today” and 10 means “Very willing to give up something today”.</p>
+  <center>
+    {{ formfield player.input_radio_temp label=""}}
+  </center>
+
+<br>
+<hr>
+
+<h3>How willing are you to give to good causes without expecting anything in return?</h3><p>Please indicate your response on a scale from 0 to 10, where 0 means “Completely unwilling to do so” and 10 means “Very willing to do so”.</p>
+  <center>
+    {{ formfield player.input_radio_altruism label=""}}
+  </center>
+
+<br>
+<hr>
+
+<h3>How well does the following statement describe you as a person?
+  
+<p><i>As long as I am not convinced otherwise, I assume that people have only the best intentions.</i></h3></p>
+  
+<p> Please indicate your response on a scale from 0 to 10, where 0 means “The statement does not describe me at all” and 10 means “The statement describes me perfectly”.</p>
+  <center>
+    {{ formfield player.input_radio_trust label=""}}
+  </center>
+
+</div>
+</div>
+
+<br>
+
+<div class="row justify-content-end">
+    <div class="col-md-2">
+      <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+        <span style="font-size:14pt">Continue</span>
+      </button>
+    </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+
+<!-- <style>
+  .box {
+    border-style: solid;
+    border-color: #0275d8;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  }
+</style> -->
+
+<link href="{{ static 'PD_AI/mystyle.css' }}" rel="stylesheet">
+
+{{ endblock }}

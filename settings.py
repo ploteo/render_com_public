@@ -1,41 +1,47 @@
 from os import environ
 
 SESSION_CONFIGS = [
-    dict(
-         name='G1',#Loss/Gain Frame
-         app_sequence=['G1'],
-         num_demo_participants=3,
-     ),
-    dict(
-        name='G2',#Coord mean of transportation
-        app_sequence=['G2'],
-        num_demo_participants=12,
+            dict(
+            name='PD_AI_vs2',
+            app_sequence=['PD_AI_vs2'], 
+            num_demo_participants= 4,
+            treatment = "SAME" #DIFF (one coop and one self) or SAME (or both coop or both self)
     ),
-        dict(
-        name='G3',#IG with comp
-        app_sequence=['G3'],
-        num_demo_participants=6,
-    ),
-        dict(
-        name='G4',#
-        app_sequence=['G4'],
-        num_demo_participants=2,
-    ),
-        dict(
-        name='G5',#
-        app_sequence=['G5'],
-        num_demo_participants=6,
-    ),
-        dict(
-        name='G6',#
-        app_sequence=['G6'],
-        num_demo_participants=8,
-    ),
-    dict(
-        name='Gall',#
-        app_sequence=['RISKLAB_bret','Gall_survey'],
-        num_demo_participants=6,
-    ),
+    # dict(
+    #      name='G1',#Loss/Gain Frame
+    #      app_sequence=['G1'],
+    #      num_demo_participants=3,
+    #  ),
+    # dict(
+    #     name='G2',#Coord mean of transportation
+    #     app_sequence=['G2'],
+    #     num_demo_participants=12,
+    # ),
+    #     dict(
+    #     name='G3',#IG with comp
+    #     app_sequence=['G3'],
+    #     num_demo_participants=6,
+    # ),
+    #     dict(
+    #     name='G4',#
+    #     app_sequence=['G4'],
+    #     num_demo_participants=2,
+    # ),
+    #     dict(
+    #     name='G5',#
+    #     app_sequence=['G5'],
+    #     num_demo_participants=6,
+    # ),
+    #     dict(
+    #     name='G6',#
+    #     app_sequence=['G6'],
+    #     num_demo_participants=8,
+    # ),
+    # dict(
+    #     name='Gall',#
+    #     app_sequence=['RISKLAB_bret','Gall_survey'],
+    #     num_demo_participants=6,
+    # ),
 
 ]
 
